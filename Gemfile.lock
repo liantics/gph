@@ -52,8 +52,17 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.1)
+    crowdtilt (1.0.0)
+      activesupport
+      faraday (~> 0.8, < 0.10)
+      faraday_middleware (~> 0.9.0)
+      json
     erubis (2.7.0)
     execjs (2.2.1)
+    faraday (0.9.0)
+      multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.9.1)
+      faraday (>= 0.7.4, < 0.10)
     font-awesome-rails (4.1.0.0)
       railties (>= 3.2, < 5.0)
     font-awesome-sass-rails (3.0.2.2)
@@ -91,6 +100,7 @@ GEM
     monban-generators (0.0.4)
       monban (>= 0.0.12)
     multi_json (1.10.1)
+    multipart-post (2.0.0)
     nested_form (0.3.2)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
@@ -187,6 +197,7 @@ DEPENDENCIES
   aws-sdk
   bootstrap-sass
   coffee-rails (~> 4.0.0)
+  crowdtilt
   font-awesome-sass-rails
   high_voltage
   jbuilder (~> 2.0)

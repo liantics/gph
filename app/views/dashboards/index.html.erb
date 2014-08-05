@@ -1,1 +1,48 @@
-Green Planet Heroes Home Page
+<%if signed_in? %>
+<div class="jumbotron masthead">
+  <h1>Welcome, Hero!</h1>
+</div>
+  <%= render "your_projects" %>
+  <%= render "projects_you_funded" %>
+
+<%else%>
+  <div class="jumbotron masthead">
+    <h1>You Can be a Hero!</h1>
+    <p>Fund Projects, Save the World<sup>*</sup></p>
+    <p><%= link_to "Sign up now!", [:new, :user], class: "btn btn-primary btn-large" %></p>
+    <p><sup>*</sup>Because every donation and every successful project counts!</p>
+  </div>
+
+  <div class="hero-unit">
+    <h2 class="center">How It Works:</h2>
+    <ul class="thumbnails" style="margin-left: 30px;">
+      <li class="span4 offset2"><img class="box" src="http://s3.amazonaws.com/omrails_images/pins/images/000/000/113/medium/Placeholder_PickAProject.jpg?1361837879"></li>
+      <li class="span4"><img class="box" src="http://s3.amazonaws.com/omrails_images/pins/images/000/000/112/medium/Placeholder_Donate.jpg?1361837787"></li>
+      <li class="span=4"><img class="box" src="http://s3.amazonaws.com/omrails_images/pins/images/000/000/114/medium/Placeholder_Save_the_world.jpg?1361837986"></li>
+    </ul>
+  </div>
+<%end%>
+
+<div class="container">
+  <div class="hero-unit">
+    <h1>Featured Projects</h1>
+    <p class="marketing-byline">
+      <i>Check Out These Amazing Projects! </i>
+    </p>
+    <%= link_to "See All Projects", projects_path,
+      class: "btn btn-primary btn-large pull-right" %>
+  </div>
+
+  <%= render "layouts/carousel_featured" %>
+
+  <div class="hero-unit">
+    <h1>More Cool Projects</h1>
+    <p class="marketing-byline"> 
+      <i>Make Someone's Day: Push a Project Over the Funding Finish Line!</i>
+    </p>
+    <%= link_to "See All Projects", 
+      projects_path, class: "btn btn-primary btn-large pull-right" %>
+    <%= render "cool_projects" %>
+  </div>
+
+</div>

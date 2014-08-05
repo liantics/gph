@@ -3,6 +3,6 @@
     Signed in as <%= current_user.name %>, not you? 
     <%= button_to "Sign out", :session, method: :delete %> 
   <% else %>
-    <div><%= link_to "Sign in", [:new, :session] %> or <%= link_to "Sign Up", [:new, :user] %></div>
+    <div><%= link_to "Sign in", [:new, :session] %> 
   <% end %>
 </div>

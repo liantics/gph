@@ -26,6 +26,7 @@ $btnPrimaryBackgroundHighlight: lightgreen;
 
 /*import twitter bootstrap css*/
 @import 'bootstrap';
+
 /*Set a large padding at page top to accomodate fixed-to-top nav bar*/
 body{
   padding-top: 30px;
@@ -67,9 +68,6 @@ a:hover{
 /* *********************************** */
 /* Safe to import bootstrap below here */
 /* *********************************** */
-
-/*import the responsive bootstrap layout*/
-@import 'bootstrap-responsive';
 
 .hero-unit {
   background: dce8dc;
