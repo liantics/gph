@@ -24,7 +24,9 @@ $navbarLinkColor: white;
 $btnPrimaryBackground: green;
 $btnPrimaryBackgroundHighlight: lightgreen;
 
-/*import twitter bootstrap css*/
+/*
+*Safe to import twitter bootstrap css
+*/
 @import 'bootstrap';
 
 /*Set a large padding at page top to accomodate fixed-to-top nav bar*/
