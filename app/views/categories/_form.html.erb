@@ -1,0 +1,8 @@
+<%= form_for @category do |form| %>
+  <%= render "error_messages", target: @category %>
+  <%= form.label :name, "Category" %>
+  <%= form.text_field :name %>
+  <%= form.label :category_type, "Which type of category is this?" %>
+  <%= form.text_field :category_type %>
+  <%= form.submit :submit %>
+<% end %>
