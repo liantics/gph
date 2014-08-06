@@ -5,10 +5,11 @@ class CategoriesController < ApplicationController
 
   def create
     @category = current_user.categories.new(category_params)
+
     if @category.save
       redirect_to @category 
     else
-      redirect_to root_path 
+      render :new
     end
   end
 
@@ -22,13 +23,9 @@ class CategoriesController < ApplicationController
 
   def update
     @category = Category.find(params[:id])
+    
     if current_user.allowed_to_modify?(@category)
-      if @category.update(category_params)
-        redirect_to @category
-      else
-        render :edit
-      end
-
+      update_category(@category)
     else
       redirect_to root_path 
     end
@@ -41,5 +38,13 @@ class CategoriesController < ApplicationController
       :name,
       :category_type,
     )
+  end
+
+  def update_category(category)
+    if category.update(category_params)
+      redirect_to category
+    else
+      render :edit
+    end
   end
 end

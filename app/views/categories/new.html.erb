@@ -3,5 +3,7 @@
   <%= render "form" %>
 <% else%>
   You must be signed in to create a category.
-  <div><%= link_to "Sign In", session: :new %> or <%= link_to "Sign Up", user: :new %></div>
+  <div>
+    <%= link_to "Sign In", session: :new %> or <%= link_to "Sign Up", user: :new %>
+  </div>
 <% end %>
