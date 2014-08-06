@@ -15,6 +15,6 @@ class User < ActiveRecord::Base
   end
 
   def is_site_admin?
-    current_user.site_admin
+    site_admin?
   end
 end
