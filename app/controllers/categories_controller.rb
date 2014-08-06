@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = current_user.categories.new(category_params.merge(user_id: current_user.id))
+    @category = current_user.categories.new(category_params)
     if @category.save
       redirect_to @category 
     else

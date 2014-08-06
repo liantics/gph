@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   private
 
   def is_owner?(object)
-    id = object.user_id
+    id == object.user_id
   end
 
   def is_site_admin?
