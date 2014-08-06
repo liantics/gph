@@ -10,7 +10,12 @@ class ProjectsController < ApplicationController
 
   def create
     @project = current_user.projects.create(project_params)
-    redirect_to @project
+
+    if @project.save
+      redirect_to @project
+    else
+      redirect_to projects_path
+    end
   end
 
   def show
