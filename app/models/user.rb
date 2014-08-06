@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   validates :password_digest, presence: true
 
   has_many :categories
+  has_many :projects
   
   def allowed_to_modify?(object)
     is_owner?(object) || is_site_admin?
