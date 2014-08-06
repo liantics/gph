@@ -1,0 +1,41 @@
+<%= form_for @project do |form| %>
+  <%= render "error_messages", target: @project %>
+  <div>
+    <%= form.label :title %>
+  </div>
+  <div>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :blurb %>
+  </div>
+  <div>
+    <%= form.text_field :blurb %>
+  </div>
+  <div>
+    <%= form.label :description %>
+  </div>
+  <div>
+    <%= form.text_field :description %>
+  </div>
+  <div>
+    <%= form.label "Project cost", :cost %>
+  </div>
+  <div>
+    <%= form.text_field :cost %>
+  </div>
+  <div>
+    <%= form.label "Category" %>
+  </div>
+  <div>
+    <%= form.collection_select(
+      :category_id, 
+      @categories, 
+      :id, 
+      :name, 
+      include_blank: "choose..."
+      ) 
+    %>
+  </div>
+  <%= form.submit %>
+<% end %>

@@ -4,4 +4,5 @@ class Category < ActiveRecord::Base
   validates :name, uniqueness: { scope: :category_type }
 
   belongs_to :user
+  has_many :projects
 end
