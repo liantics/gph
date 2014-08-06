@@ -1,8 +1,8 @@
 <div>
   <% if signed_in? %>
     Signed in as <%= current_user.name %>, not you? 
-    <%= button_to "Sign out", :session, method: :delete %> 
+    <li><%= button_to "Sign out", :session, method: :delete %></li>
   <% else %>
-    <%= link_to "Sign in", [:new, :session] %> 
+    <li><%= link_to "Sign in", [:new, :session] %></li>
   <% end %>
 </div>
