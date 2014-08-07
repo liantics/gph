@@ -13,17 +13,89 @@ $baseFontFamily: Oxygen, FontAwesome, Arial;
 /* this section                                                             */
 /* ************************************************************************ */
 
-/*Navbar tweaks */
+/*Navbar tweaks 
 $navbarBackground: lightgreen;
 $navbarBackgroundHighlight: green;
 $navbarLinkBackgroundHover: lightgreen;
 $navbarBrandColor: white;
 $navbarLinkColor: white;
+*/
+.navbar.navbar-default {
+  background-color: #8fd662;
+  border-color: #3fa917;
+}
+.navbar.navbar-default .navbar-brand {
+	color: #fffffa;
+}
+.navbar.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+	color: #dad5d5;
+}
+.navbar.navbar-default .navbar-text {
+	color: #fffffa;
+}
+.navbar.navbar-default .navbar-nav > li > a {
+	color: #fffffa;
+}
+.navbar.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+	color: #dad5d5;
+}
+.navbar.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+	color: #dad5d5;
+	background-color: #3fa917;
+}
+.navbar.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+	color: #dad5d5;
+	background-color: #3fa917;
+}
+.navbar.navbar-default .navbar-toggle {
+	border-color: #3fa917;
+}
+.navbar.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+	background-color: #3fa917;
+}
+.navbar.navbar-default .navbar-toggle .icon-bar {
+	background-color: #fffffa;
+}
+.navbar.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+	border-color: #fffffa;
+}
+.navbar.navbar-default .navbar-link {
+	color: #fffffa;
+}
+.navbar.navbar-default .navbar-link:hover {
+	color: #dad5d5;
+}
 
-/*Great big button tweaks */
-$btnPrimaryBackground: green;
+@media (max-width: 767px) {
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+		color: #fffffa;
+	}
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+		color: #dad5d5;
+	}
+	.navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+		color: #dad5d5;
+		background-color: #3fa917;
+	}
+}
+
+/*Great big button tweaks 
+$btnPrimaryBackground: #fcfcfc;
 $btnPrimaryBackgroundHighlight: lightgreen;
-
+*/
+.btn.btn-success {
+    color: #ffffff;
+    background-color: #39ac3;
+    background-image: linear-gradient(to bottom, #359635, #90ee90);
+    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.1);
+}
+.btn.btn-success:hover {
+    color: #ffffff;
+    background-color: #90ee90;
+    background-image: linear-gradient(to bottom, #90ee90, #90ee90);
+    border-color: #62c462 #3E8F3E #3E8F3E;
+}
 /*
 *Safe to import twitter bootstrap css
 */
