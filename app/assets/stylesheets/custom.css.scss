@@ -1,28 +1,112 @@
-/*Specify the fonts to use for the site, in the order in which they should be used*/
 $baseFontFamily: Oxygen, FontAwesome, Arial;
 
-/*import google's Oxygen font*/
 @import url(http://fonts.googleapis.com/css?family=Oxygen);
-
-/*import font awesome icon font*/
 @import "font-awesome";
 
-/* ************************************************************************ */
-/* Note: If you import twitter bootstrap above navbar and button tweaks, it */
-/* can cause the tweaks to not load. Be sure bootstrap imports happen below */
-/* this section                                                             */
-/* ************************************************************************ */
+/* *************************************************************************** */
+/* Warning: If you import twitter bootstrap above navbar and button tweaks, it */
+/* can cause the tweaks to not load. Be sure bootstrap imports happen below    */
+/* this section. Add bootstrap AFTER the "safe to add" comment, below.         */
+/* *************************************************************************** */
 
-/*Navbar tweaks */
-$navbarBackground: lightgreen;
-$navbarBackgroundHighlight: green;
-$navbarLinkBackgroundHover: lightgreen;
-$navbarBrandColor: white;
-$navbarLinkColor: white;
+.navbar.navbar-default {
+  background-color: #8fd662;
+  border-color: #3fa917;
+}
+
+.navbar.navbar-default .navbar-brand {
+  color: #fffffa;
+}
+
+.navbar.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #dad5d5;
+}
+
+.navbar.navbar-default .navbar-text {
+  color: #fffffa;
+}
+
+.navbar.navbar-default .navbar-nav > li > a {
+  color: #fffffa;
+}
+
+.navbar.navbar-default .navbar-nav > li {
+  a:hover, a:focus {
+    color: #dad5d5;
+  }
+}
+
+.navbar.navbar-default .navbar-nav > .active {
+  a, a:focus, a:hover {
+    color: #dad5d5;
+    background-color: #3fa917;
+  }
+}
+
+.navbar.navbar-default .navbar-nav > .open {
+  a, a:hover, a:focus {
+    color: #dad5d5;
+    background-color: #3fa917;
+  }
+}
+
+.navbar.navbar-default .navbar-toggle {
+  border-color: #3fa917;
+}
+
+.navbar.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #3fa917;
+}
+
+.navbar.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fffffa;
+}
+
+.navbar.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border-color: #fffffa;
+}
+
+.navbar.navbar-default .navbar-link {
+  color: #fffffa;
+}
+
+.navbar.navbar-default .navbar-link:hover {
+  color: #dad5d5;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #fffffa;
+  }
+
+  .navbar-default .navbar-nav .open .dropdown-menu > li {
+      a:hover, a:focus {
+      color: #dad5d5;
+    }
+  }
+
+  .navbar-default .navbar-nav .open .dropdown-menu > .active {
+    a, a:hover, a:focus {
+      color: #dad5d5;
+      background-color: #3fa917;
+    }
+  }
+}
 
 /*Great big button tweaks */
-$btnPrimaryBackground: green;
-$btnPrimaryBackgroundHighlight: lightgreen;
+.btn.btn-success{
+  color: #ffffff;
+  background-color: #39ac3;
+  background-image: linear-gradient(to bottom, #359635, #90ee90);
+  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.1);
+}
+
+.btn.btn-success:hover {
+  color: #ffffff;
+  background-color: #90ee90;
+  background-image: linear-gradient(to bottom, #90ee90, #90ee90);
+  border-color: #62c462 #3E8F3E #3E8F3E;
+}
 
 /*
 *Safe to import twitter bootstrap css
@@ -43,10 +127,10 @@ a:hover{
   text-decoration:underline;
 }
 
-.nav li{  
-  padding-left: 0px; 
-  padding-right: 0px;   
-}  
+.nav li{
+  padding-left: 0px;
+  padding-right: 0px;
+}
 
 .marketing-byline, h1, h2{
   text-align: center;
@@ -66,10 +150,6 @@ a:hover{
   margin-bottom: 0px;
   color: rgb(255, 255, 255);
 }
-
-/* *********************************** */
-/* Safe to import bootstrap below here */
-/* *********************************** */
 
 .hero-unit {
   background: dce8dc;
@@ -158,9 +238,10 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
 #footer a{
   color: lightgreen;
 }
+
 #footer a:visited{
   color: #DDD;
-} 
+}
 
 .pins_pagination a, .pins_pagination span{
   padding: 0.2em 0.3em; 
