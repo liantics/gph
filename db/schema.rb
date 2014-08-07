@@ -28,14 +28,14 @@ ActiveRecord::Schema.define(version: 20140806190958) do
   add_index "categories", ["user_id"], name: "index_categories_on_user_id", using: :btree
 
   create_table "projects", force: true do |t|
-    t.string   "title",                                              null: false
-    t.text     "blurb",                                              null: false
-    t.text     "description",                                        null: false
-    t.integer  "user_id",                                            null: false
-    t.integer  "category_id",                                        null: false
-    t.decimal  "cost",        precision: 10, scale: 2, default: 0.0, null: false
-    t.datetime "created_at",                                         null: false
-    t.datetime "updated_at",                                         null: false
+    t.string   "title",                   null: false
+    t.text     "blurb",                   null: false
+    t.text     "description",             null: false
+    t.integer  "user_id",                 null: false
+    t.integer  "category_id",             null: false
+    t.integer  "cost",        default: 0, null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   add_index "projects", ["category_id"], name: "index_projects_on_category_id", using: :btree
