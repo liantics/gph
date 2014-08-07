@@ -11,17 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140806190958) do
+ActiveRecord::Schema.define(version: 20140807174757) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: true do |t|
-    t.string   "name",          null: false
-    t.string   "category_type", null: false
-    t.integer  "user_id",       null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string   "name",                         null: false
+    t.string   "category_type",                null: false
+    t.integer  "user_id",                      null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.boolean  "available",     default: true, null: false
   end
 
   add_index "categories", ["name", "category_type"], name: "index_categories_on_name_and_category_type", unique: true, using: :btree
@@ -42,11 +43,12 @@ ActiveRecord::Schema.define(version: 20140806190958) do
   add_index "projects", ["title", "user_id"], name: "index_projects_on_title_and_user_id", unique: true, using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "email",           null: false
-    t.string   "name",            null: false
-    t.string   "password_digest", null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "email",                          null: false
+    t.string   "name",                           null: false
+    t.string   "password_digest",                null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.boolean  "account_enabled", default: true, null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -6,7 +6,7 @@ class CreateProjects < ActiveRecord::Migration
       t.text :description, null: false
       t.integer :user_id, null: false
       t.integer :category_id, null: false
-      t.integer :cost, precision: 10, default: 0, null: false
+      t.integer :cost, default: 0, null: false
       t.timestamps null: false
     end
     add_index :projects, [:title, :user_id], unique: true
