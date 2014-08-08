@@ -1,6 +1,7 @@
 <% if @user.errors.any? %>
   <%= render "error_messages", target: @user %>
 <% end %>
+
 <%= form_for @user do |form| %>
   <div>
     <%= form.label :email %>
