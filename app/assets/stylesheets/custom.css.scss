@@ -30,18 +30,24 @@ $baseFontFamily: Oxygen, FontAwesome, Arial;
   color: #fffffa;
 }
 
-.navbar.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: #dad5d5;
+.navbar.navbar-default .navbar-nav > li {
+  a:hover, a:focus {
+    color: #dad5d5;
+  }
 }
 
-.navbar.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-  color: #dad5d5;
-  background-color: #3fa917;
+.navbar.navbar-default .navbar-nav > .active {
+  a, a:focus, a:hover {
+    color: #dad5d5;
+    background-color: #3fa917;
+  }
 }
 
-.navbar.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-  color: #dad5d5;
-  background-color: #3fa917;
+.navbar.navbar-default .navbar-nav > .open {
+  a, a:hover, a:focus {
+    color: #dad5d5;
+    background-color: #3fa917;
+  }
 }
 
 .navbar.navbar-default .navbar-toggle {
@@ -56,8 +62,7 @@ $baseFontFamily: Oxygen, FontAwesome, Arial;
   background-color: #fffffa;
 }
 
-.navbar.navbar-default .navbar-collapse,
-.navbar-default .navbar-form {
+.navbar.navbar-default .navbar-collapse, .navbar-default .navbar-form {
   border-color: #fffffa;
 }
 
@@ -74,13 +79,17 @@ $baseFontFamily: Oxygen, FontAwesome, Arial;
     color: #fffffa;
   }
 
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #dad5d5;
+  .navbar-default .navbar-nav .open .dropdown-menu > li {
+      a:hover, a:focus {
+      color: #dad5d5;
+    }
   }
 
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #dad5d5;
-    background-color: #3fa917;
+  .navbar-default .navbar-nav .open .dropdown-menu > .active {
+    a, a:hover, a:focus {
+      color: #dad5d5;
+      background-color: #3fa917;
+    }
   }
 }
 
