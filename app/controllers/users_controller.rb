@@ -38,7 +38,10 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
 
     if current_user == user
-      disable(user)
+      user.disable
+      sign_out
+      redirect_to root_path
+      flash[:notice] = "User #{user.name} has been disabled"
     end
   end
 
@@ -67,12 +70,5 @@ class UsersController < ApplicationController
     else
       render :edit
     end
-  end
-
-  def disable(user)
-    user.update(account_enabled: false)
-    flash[:notice] = "User #{user.name} has been disabled"
-    sign_out
-    redirect_to root_path
   end
 end
