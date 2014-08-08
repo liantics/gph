@@ -10,5 +10,5 @@
   <%= render "user_info_form" %>
 </div>
 <div>
-  <%= button_to "Disable My Account", @user, confirm: "Are you sure?", method: :delete %>
+  <%= button_to "Disable My Account", @user, data: { confirm: "Are you sure? This CAN'T be undone." }, method: :delete %>
 </div>
