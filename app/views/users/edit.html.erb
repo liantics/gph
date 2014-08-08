@@ -1,11 +1,4 @@
 <h2>Edit <%= @user.name %></h2>
-<% if flash.any? %>
-  <div id="flash">
-    <% flash.each do |key, value| -%>
-      <div id="flash_<%= key %>"><%= value %></div>
-    <% end -%>
-  </div>
-<% end %>
 <div>
   <%= render "user_info_form" %>
 </div>
