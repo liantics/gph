@@ -22,10 +22,10 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    @category = Category.find(params[:id])
+    category = Category.find(params[:id])
     
-    if current_user.allowed_to_modify?(@category)
-      update_category(@category)
+    if current_user.allowed_to_modify?(category)
+      update_category(category)
     else
       redirect_to root_path 
     end

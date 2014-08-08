@@ -1,7 +1,7 @@
 <div>
   <% if signed_in? %>
     <%= link_to "Create Project", [:new, :project] %>
-    Signed in as <%= current_user.name %>, not you? 
+    Signed in as <%= current_user.name %>, not you?
     <li><%= button_to "Sign out", :session, method: :delete %></li>
   <% else %>
     <li><%= link_to "Sign in", [:new, :session] %></li>
