@@ -71,11 +71,11 @@ $baseFontFamily: Oxygen, FontAwesome, Arial;
 
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-  color: #fffffa;
+    color: #fffffa;
   }
 
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-  color: #dad5d5;
+    color: #dad5d5;
   }
 
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
@@ -86,17 +86,17 @@ $baseFontFamily: Oxygen, FontAwesome, Arial;
 
 /*Great big button tweaks */
 .btn.btn-success{
-    color: #ffffff;
-    background-color: #39ac3;
-    background-image: linear-gradient(to bottom, #359635, #90ee90);
-    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.1);
+  color: #ffffff;
+  background-color: #39ac3;
+  background-image: linear-gradient(to bottom, #359635, #90ee90);
+  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.1);
 }
 
 .btn.btn-success:hover {
-    color: #ffffff;
-    background-color: #90ee90;
-    background-image: linear-gradient(to bottom, #90ee90, #90ee90);
-    border-color: #62c462 #3E8F3E #3E8F3E;
+  color: #ffffff;
+  background-color: #90ee90;
+  background-image: linear-gradient(to bottom, #90ee90, #90ee90);
+  border-color: #62c462 #3E8F3E #3E8F3E;
 }
 
 /*
