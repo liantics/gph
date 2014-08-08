@@ -1,42 +1,33 @@
-<div>
-  <% if signed_in? %>
-    <%= link_to "Create Project", [:new, :project] %>
-    Signed in as <%= current_user.name %>, not you?
-    <li><%= button_to "Sign out", :session, method: :delete %></li>
-  <% else %>
-    <li><%= link_to "Sign in", [:new, :session] %></li>
-  <% end %>
-</div>
 <%= render "flash_messages" %>
 <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="#" class="navbar-brand">Green Planet Heroes</a>
-        </div>
-        <!-- Collection of nav links and other content for toggling -->
-        <div id="navbarCollapse" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Learn More</a></li>
-                <li><a href="#">Create Project</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Success Stories</a></li>
-                <li><a href="#">Resources</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <% if signed_in? %>
-                  Signed in as <%= current_user.name %>, not you? 
-                  <li><%= button_to "Sign out", :session, method: :delete %></li>
-                <% else %>
-                  <li><%= link_to "Sign in", [:new, :session] %></li>
-                <% end %>
-            </ul>
-        </div>
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="#" class="navbar-brand">Green Planet Heroes</a>
     </div>
+    <!-- Collection of nav links and other content for toggling -->
+    <div id="navbarCollapse" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="#">Learn More</a></li>
+        <li><%= link_to "Create Project", [:new, :project] %></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Success Stories</a></li>
+        <li><a href="#">Resources</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if signed_in? %>
+          Signed in as <%= current_user.name %>, not you? 
+          <li><%= button_to "Sign out", :session, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Sign in", [:new, :session] %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </nav>
