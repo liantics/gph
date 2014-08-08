@@ -85,12 +85,13 @@ $baseFontFamily: Oxygen, FontAwesome, Arial;
 }
 
 /*Great big button tweaks */
-.btn.btn-success {
+.btn.btn-success{
     color: #ffffff;
     background-color: #39ac3;
     background-image: linear-gradient(to bottom, #359635, #90ee90);
     border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.1);
 }
+
 .btn.btn-success:hover {
     color: #ffffff;
     background-color: #90ee90;
