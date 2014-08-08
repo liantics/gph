@@ -1,1 +1,4 @@
-<h3><%= @user.username%>'s Projects</h3>
+<h3><%= @user.name %>'s Projects</h3>
+<% if current_user == @user %>
+  <%= link_to "Edit my profile", [:edit, :user] %>
+<% end %>

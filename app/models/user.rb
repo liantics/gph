@@ -4,11 +4,15 @@ class User < ActiveRecord::Base
 
   has_many :categories
   has_many :projects
-  
+
   def allowed_to_modify?(object)
     is_owner?(object) || is_site_admin?
   end
-  
+
+  def disable
+    update(account_enabled: false)
+  end
+
   private
 
   def is_owner?(object)

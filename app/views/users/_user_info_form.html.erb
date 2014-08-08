@@ -1,0 +1,23 @@
+<% if @user.errors.any? %>
+  <%= render "error_messages", target: @user %>
+<% end %>
+
+<%= form_for @user do |form| %>
+  <div>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <% if ! current_user %>
+    <div>
+      <%= form.label :password %>
+      <%= form.password_field :password %>
+    </div>
+  <% end %>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

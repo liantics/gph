@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  before_action :require_enabled_account, only: [:create]
   skip_before_action :require_login, only: [:new, :create]
 
   def new
@@ -6,7 +7,6 @@ class SessionsController < ApplicationController
 
   def create
     user = authenticate_session(session_params)
-
     if sign_in(user)
       redirect_to root_path
     else
@@ -24,5 +24,12 @@ class SessionsController < ApplicationController
   def session_params
     params.require(:session).permit(:email, :password)
   end
-end
 
+  def require_enabled_account
+    user = User.find_by(email: session_params[:email])
+    if ! user.account_enabled
+      flash[:notice] = "User #{user.name} has been disabled"
+      redirect_to root_path
+    end
+  end
+end
