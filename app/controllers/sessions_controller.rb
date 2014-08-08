@@ -6,11 +6,7 @@ class SessionsController < ApplicationController
 
   def create
     user = authenticate_session(session_params)
-    if sign_in(user)
-      verify_user_allowed
-    else
-      render :new
-    end
+    login_if_allowed(session_params[:email])
   end
 
   def destroy
@@ -24,13 +20,20 @@ class SessionsController < ApplicationController
     params.require(:session).permit(:email, :password)
   end
 
-  def verify_user_allowed
-    if current_user.account_enabled
-      redirect_to root_path
+  def login_if_allowed(email)
+    user = User.find_by(email: email)
+    if user.account_enabled
+      login(user)
     else
-      sign_out
       redirect_to root_path
     end
   end
-end
 
+  def login(user)
+    if sign_in(user)
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+end
