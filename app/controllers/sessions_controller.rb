@@ -22,9 +22,11 @@ class SessionsController < ApplicationController
 
   def login_if_allowed(email)
     user = User.find_by(email: email)
+
     if user.account_enabled
       login(user)
     else
+      flash[:notice] = "User #{user.name} has been disabled"
       redirect_to root_path
     end
   end
