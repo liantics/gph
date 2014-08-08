@@ -26,6 +26,7 @@ class UsersController < ApplicationController
 
   def update
     user = User.find(params[:id])
+
     if current_user == user
       update_user(user)
     else
@@ -35,8 +36,9 @@ class UsersController < ApplicationController
 
   def destroy
     user = User.find(params[:id])
+
     if current_user == user
-     disable(user)
+      disable(user)
     end
   end
 
@@ -69,8 +71,8 @@ class UsersController < ApplicationController
 
   def disable(user)
     user.update(account_enabled: false)
+    flash[:notice] = "User #{user.name} has been disabled"
     sign_out
     redirect_to root_path
   end
 end
-

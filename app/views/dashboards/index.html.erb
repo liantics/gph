@@ -1,3 +1,10 @@
+<% if flash.any? %>
+  <div id="flash">
+    <% flash.each do |key, value| -%>
+      <div id="flash_<%= key %>"><%= value %></div>
+    <% end -%>
+  </div>
+<% end %>
 <%if signed_in? %>
   <div class="jumbotron masthead">
     <h1>Welcome, Hero!</h1>
