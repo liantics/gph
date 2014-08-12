@@ -1,4 +1,6 @@
 class ChargesController < ApplicationController
+  DEFAULT_CURRENCY = "usd"
+
   def new
   end
 
@@ -14,7 +16,7 @@ class ChargesController < ApplicationController
       customer: customer.id,
       amount: @amount,
       description: "GPH Test Stripe customer",
-      currency: "usd"
+      currency: DEFAULT_CURRENCY
     )
 
   rescue Stripe::CardError => error
