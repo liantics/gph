@@ -40,6 +40,6 @@ class ProjectsController < ApplicationController
   end
 
   def sorted_donation_levels
-    @project.levels.all.order("amount ASC")
+    @project.levels.order("amount ASC")
   end
 end
