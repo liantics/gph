@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :charges, only: [:new, :create]
   resources :dashboards, only: [:index, :show, :new, :create]
-  resources :projects, only: [:index, :new, :create, :show]
+  resources :projects, only: [:index, :new, :create, :show] do
+    resources :levels, only: [:new, :create]
+  end
   resources :categories, only: [:new, :create, :show, :edit, :update]
 
   root "dashboards#index"

@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   def index
-   @projects = Project.all
+    @projects = Project.all
   end
 
   def new
@@ -10,7 +10,6 @@ class ProjectsController < ApplicationController
 
   def create
     project = current_user.projects.create(project_params)
-
     if project.save
       redirect_to project
     else
@@ -20,6 +19,12 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @new_level = Level.new
+    @levels = sorted_donation_levels
+  end
+
+  def index
+    @projects = Project.all
   end
 
   private
@@ -32,5 +37,9 @@ class ProjectsController < ApplicationController
       :category_id,
       :cost,
     )
+  end
+
+  def sorted_donation_levels
+    @project.levels.all.order("amount ASC")
   end
 end
