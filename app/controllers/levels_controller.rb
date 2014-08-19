@@ -6,7 +6,8 @@ class LevelsController < ApplicationController
 
   def create
     project = Project.find(params[:project_id])
-    if @level = project.levels.create!(level_params)
+    @level = project.levels.build(level_params)
+    if @level.save
       redirect_to project
     else
       render :new
