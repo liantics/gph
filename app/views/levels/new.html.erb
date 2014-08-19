@@ -1,0 +1,28 @@
+<%= render "error_messages", target: @level %>
+<%= form_for [@project, @level] do |form| %>
+  <div>
+    <%= form.label :title %>
+  </div>
+
+  <div>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+  </div>
+
+  <div>
+    <%= form.text_field :description %>
+  </div>
+
+  <div>
+    <%= form.label "Amount", :amount %>
+  </div>
+
+  <div>
+    <%= form.text_field :amount %>
+  </div>
+
+  <%= form.submit %>
+<% end %>

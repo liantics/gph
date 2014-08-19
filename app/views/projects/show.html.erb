@@ -1,4 +1,4 @@
-<h2><%= @project.title%></h2>
+<h2><%= @project.title %></h2>
 <div>
   <%= @project.blurb %>
 </div>
@@ -6,5 +6,26 @@
   <%= @project.description %>
 </div>
 <div>
-  <%= @project.cost %>
+  Total $<%= @project.cost %>
 </div>
+
+<h2>Donation Levels</h2>
+<div>
+  <% @levels.each do |level| %>
+    <div>
+      <h3><%= level.title %></h3>
+    </div>
+    <div>
+      <%= level.description %>
+    </div>
+    <div>
+      $<%= level.amount %>
+    </div>
+  <% end %>
+</div>
+
+<% if signed_in? %>
+  <% if current_user.allowed_to_modify?(@project) %>
+    <%= link_to "Add a donation level", new_project_level_path(@project) %>
+  <% end %>
+<% end %>

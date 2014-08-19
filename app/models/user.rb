@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 
   has_many :categories
   has_many :projects
+  has_many :levels
 
   def allowed_to_modify?(object)
     is_owner?(object) || is_site_admin?
