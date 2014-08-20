@@ -119,9 +119,12 @@ $baseFontFamily: Oxygen, FontAwesome, Arial;
 */
 @import 'bootstrap';
 
-/*Set a large padding at page top to accomodate fixed-to-top nav bar*/
+.spacer {
+  padding-top: 60px;
+}
+
 body{
-  padding-top: 30px;
+  padding-top: 20px;
 }
 
 a:link{
