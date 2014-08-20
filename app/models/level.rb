@@ -7,7 +7,6 @@ class Level < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :project
-  has_many :donations
 
   def self.by_amount
     order(amount: :asc)
