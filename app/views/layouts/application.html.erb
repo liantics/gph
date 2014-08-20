@@ -9,9 +9,10 @@
     <title>GreenPlanetHeroes</title>
   </head>
   <body>
-    <%= render "header" %>
-    /*I know this inline style is ugly, it's temporary until I do the next round of css work. The topmost field on forms is hidden behind the header without this spacer.*/
-    <p style="display:block; padding:60px;"></p>
-    <%= yield %>
+    <div class="container">
+      <%= render "header" %>
+      <div class="spacer"></div>
+      <%= yield %>
+    </div>
   </body>
 </html>
