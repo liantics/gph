@@ -3,7 +3,7 @@ class DonationsController < ApplicationController
     @donation = Donation.new(donation_params)
 
     if @donation.save
-      flash[:notice] = "Your donation for #{donation_params[:amount]} is being
+      flash[:notice] = "Your donation for #{@donation.amount} is being
        processed. Thank you #{current_user.name}!"
       redirect_to receiving_project
     else
