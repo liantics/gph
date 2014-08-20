@@ -21,6 +21,12 @@
     <div>
       <%= number_to_currency level.amount %>
     </div>
+    <%= form_for [@level, @donation] do |form| %>
+      <%= form.hidden_field :amount, value: level.amount %>
+      <%= form.hidden_field :user_id, value: current_user.id %>
+      <%= form.hidden_field :level_id, value: level.id %>
+      <%= form.submit "Donate", method: :create %>
+    <% end %>
   <% end %>
 </div>
 

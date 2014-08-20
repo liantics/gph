@@ -21,6 +21,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @new_level = Level.new
     @levels = sorted_donation_levels
+    @donation = Donation.new
   end
 
   def index

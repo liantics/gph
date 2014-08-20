@@ -7,5 +7,7 @@ class Level < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :project
+  has_many :donations
+
   scope :by_amount, -> { order("amount ASC") }
 end
