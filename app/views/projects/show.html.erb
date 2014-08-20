@@ -1,4 +1,6 @@
 <h2><%= @project.title %></h2>
+<%= @test_data %>
+<%= @text %>
 <div>
   <%= @project.blurb %>
 </div>
@@ -21,6 +23,11 @@
     <div>
       <%= number_to_currency level.amount %>
     </div>
+    <%= form_for [@donation] do |form| %>
+      <%= form.hidden_field :amount, value: level.amount %>
+      <%= form.hidden_field :level_id, value: level.id %>
+      <%= form.submit "Donate", method: :create %>
+    <% end %>
   <% end %>
 </div>
 
