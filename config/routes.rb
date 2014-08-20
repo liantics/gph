@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root "dashboards#index"
+
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :donations, only: [:new, :create]
@@ -8,6 +10,4 @@ Rails.application.routes.draw do
     resources :levels, only: [:new, :create]
   end
   resources :categories, only: [:new, :create, :show, :edit, :update]
-
-  root "dashboards#index"
 end
