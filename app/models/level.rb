@@ -9,5 +9,7 @@ class Level < ActiveRecord::Base
   belongs_to :project
   has_many :donations
 
-  scope :by_amount, -> { order(amount: :asc) }
+  def self.by_amount
+    order(amount: :asc)
+  end
 end
