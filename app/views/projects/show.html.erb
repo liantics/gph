@@ -21,6 +21,9 @@
     <div>
       <%= number_to_currency level.amount %>
     </div>
+    <%= form_for [level, @donation] do |form| %>
+      <%= form.submit "Donate", method: :create %>
+    <% end %>
   <% end %>
 </div>
 
