@@ -101,6 +101,9 @@ $colFormText: #003300;
       background-color: $bgHighlight; 
     }
   }
+  .navbar-right {
+    width: 20%;
+  }
 }
 
 /*Great big button tweaks */
@@ -273,6 +276,45 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
   width: 100%;
 }
 
+.dashboard_show_your_projects_block{
+  display: block;
+  margin: 5px;
+  padding: 5px;
+  font-size: 11px;
+  color: #000;
+  line-height: 1.4em;
+  float: left;
+  background-color: grayLight;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px #458B00;
+}
+
+.dashboard_show_you_funded_block{
+  display: block;
+  margin: 5px;
+  padding: 5px;
+  font-size: 11px;
+  color: #000;
+  line-height: 1.4em;
+  float: left;
+  background-color: grayLight;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px #458B00;
+}
+
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
 .categories_form_block{
   display: block;
   width: 100%
@@ -317,6 +359,10 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
 .description{
   margin: 10px 0px 5px;
   color: #000;
+}
+
+.inline{
+  display: inline-block;
 }
 
 .center{

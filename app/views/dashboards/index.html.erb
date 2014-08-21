@@ -2,8 +2,16 @@
   <div class="jumbotron masthead">
     <h1>Welcome, Hero!</h1>
   </div>
-  <%= render "your_projects" %>
-  <%= render "projects_you_funded" %>
+  <ul>
+    <li>
+      <div class="col-centered dashboard_show_your_projects_block">
+        <%= render "your_projects" %>
+      </div>
+      <div class="col-centered dashboard_show_you_funded_block">
+        <%= render "projects_you_funded" %>
+      </div>
+    </li>
+  </ul>
 <%else%>
   <div class="jumbotron masthead">
     <%= render "you_can_be_a_hero" %>

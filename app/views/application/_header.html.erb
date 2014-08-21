@@ -22,7 +22,7 @@
         <li><a href="#">Resources</a></li>
       </ul>
 
-      <ul class="nav navbar-nav pull-right">
+      <ul class="nav navbar-nav navbar-right">
         <% if signed_in? %>
           <li><%= button_to "Sign out", :session, method: :delete, class: "btn btn-custom btn-primary"  %></li>
         <% else %>
