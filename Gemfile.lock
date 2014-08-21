@@ -40,6 +40,7 @@ GEM
     bcrypt (3.1.7)
     bootstrap-sass (3.2.0.1)
       sass (~> 3.2)
+    bootstrap_form (2.1.1)
     builder (3.2.2)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -199,6 +200,7 @@ DEPENDENCIES
   aws-s3
   aws-sdk
   bootstrap-sass
+  bootstrap_form
   coffee-rails (~> 4.0.0)
   dotenv-rails
   font-awesome-sass-rails
