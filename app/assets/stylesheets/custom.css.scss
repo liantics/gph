@@ -8,98 +8,112 @@ $baseFontFamily: Oxygen, FontAwesome, Arial;
 /* can cause the tweaks to not load. Be sure bootstrap imports happen below    */
 /* this section. Add bootstrap AFTER the "safe to add" comment, below.         */
 /* *************************************************************************** */
+/*navbar*/
+$bgDefault: #8fd662;
+$bgHighlight: #BCED91;
+$colDefault: #ffffff;
+$colHover: #888888;
 
-.navbar.navbar-default {
-  background-color: #8fd662;
-  background: linear-gradient(90deg, rgb(2, 54, 2) 0%, rgb(6, 93, 6) 100%);
-  border-color: #3fa917;
-}
+/*body*/
+$colHeadings: #003300;
+$colFormBackground: rgba(188, 237, 145, .2);
+$colFormText: #003300;
 
-.navbar.navbar-default {
+/* --- Style --- */
+.navbar-custom {
+  background-color: $bgDefault;
+  border-color: $bgHighlight;
+  background: linear-gradient(180deg, rgb(2, 54, 2) 0%, rgb(6, 93, 6) 100%);
+
   .navbar-brand {
-    color: #fffffa;
-  }
-
-  .navbar-brand:hover, .navbar-brand:focus {
-    color: #dad5d5;
-  }
-
-  .navbar-text {
-    color: #fffffa;
-  }
-
-  .navbar-nav > li > a {
-    color: #fffffa;
-  }
-
-  .navbar-nav > li {
-    a:hover, a:focus {
-      color: #333;
-      background-color: #3fa917;
+    color: $colDefault;
+    &:hover, &:focus {
+      color: $colHover; 
+      background-color: $bgHighlight;
     }
   }
 
-  .navbar-nav > .active {
-    a, a:focus, a:hover {
-      color: #8fd662;
-      background-color: #3fa917;
-    }
-  }
+  .navbar-nav {
+      > li {
+        > a {
+          color: $colDefault;
+          &:hover, &:focus {
+            color: $colHover;
+            background-color: $bgHighlight;
+          }
+        }
+      }
 
-  .navbar-nav > .open {
-    a, a:hover, a:focus {
-      color: #8fd662;
-      background-color: #3fa917;
+      .active {
+        > a, > a:hover, > a:focus {
+          color: $colHover;
+          background-color: $bgHighlight;
+        }
+      }
+
+      .open {
+        > a, > a:hover, > a:focus {
+          color: $colHover;
+          background-color: $bgHighlight;
+          .caret {
+            border-top-color: $colHover;
+            border-bottom-color: $colHover;
+          }
+        }
+      }
+
+    > .dropdown {
+      > a {
+        .caret {
+          border-top-color: $colDefault;
+          border-bottom-color: $colDefault;
+        }
+        &:hover, &:focus {
+          .caret {
+            border-top-color: $colHover;
+            border-bottom-color: $colHover;
+          }
+        }
+      }
     }
   }
 
   .navbar-toggle {
-    border-color: #3fa917;
-  }
+    border-color: $bgHighlight;
 
-  .navbar-toggle:hover, .navbar-toggle:focus {
-    background-color: #3fa917;
-  }
-
-  .navbar-toggle .icon-bar {
-    background-color: #fffffa;
-  }
-
-  .navbar-collapse, .navbar-default .navbar-form {
-    border-color: #fffffa;
-  }
-
-  .navbar-link {
-    color: #fffffa;
-  }
-
-  .navbar-link:hover {
-    color: #8fd662;
+    &:hover, &:focus {
+      background-color: $bgHighlight;
+    }
+    .icon-bar { 
+      background-color: $colDefault;
+    }
   }
 }
 
 @media (max-width: 767px) {
-  .navbar-default { 
-    .navbar-nav .open .dropdown-menu > li > a {
-      color: #fffffa;
-    }
-
-    .navbar-nav .open .dropdown-menu > li {
-        a:hover, a:focus {
-        color: #dad5d5;
-      }
-    }
-
-    .navbar-nav .open .dropdown-menu > .active {
-      a, a:hover, a:focus {
-        color: #dad5d5;
-        background-color: #3fa917;
-      }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: $colDefault;
+    &:hover, &:focus {
+      color: $colHover;
+      background-color: $bgHighlight; 
     }
   }
 }
 
 /*Great big button tweaks */
+.btn.btn-default{
+  color: #ffffff;
+  background-image: linear-gradient(to bottom, #359635, #90ee90);
+  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.1);
+}
+
+.btn.btn-primary{
+  color: #ffffff;
+  background-color: #39ac3;
+  background-image: linear-gradient(to bottom, #359635, #90ee90);
+  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.1);
+}
+
 .btn.btn-success{
   color: #ffffff;
   background-color: #39ac3;
@@ -236,6 +250,18 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
   margin-right: auto;
   margin-left: auto;
   text-align: center;
+}
+
+.pretty_form {
+  padding: 1.05em;
+  color: $colFormText;
+  background-color: $colFormBackground;
+}
+
+#new_project {
+  padding: 1.05em;
+  color: $colFormText;
+  background-color: $colFormBackground;
 }
 
 #footer{

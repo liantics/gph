@@ -1,6 +1,8 @@
 <h2>Create a New Category</h2>
 <% if signed_in? %>
-  <%= render "form" %>
+  <div class="pretty_form">
+    <%= render "form" %>
+  </div>
 <% else%>
   You must be signed in to create a category.
   <div>
