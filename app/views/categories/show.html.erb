@@ -1,7 +1,9 @@
-<h2><%= @category.name %></h2>
-<div>
-  <%= @category.category_type %>
-</div>
-<div>
-  <%= link_to "Edit This Category", [:edit, @category] %>
+<div class="project_show_block">
+  <h2><%= @category.name %></h2>
+  <div class="center">
+    Category type: <%= @category.category_type %>
+  </div>
+  <div class="btn btn-default pull-right">
+    <%= link_to "Edit This Category", [:edit, @category] %>
+  </div>
 </div>
