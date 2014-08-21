@@ -10,7 +10,7 @@ $baseFontFamily: Oxygen, FontAwesome, Arial;
 /* *************************************************************************** */
 /*navbar*/
 $bgDefault: #8fd662;
-$bgHighlight: #BCED91;
+$bgHighlight: #90ee90;
 $colDefault: #ffffff;
 $colHover: #888888;
 
@@ -30,6 +30,9 @@ $colFormText: #003300;
     &:hover, &:focus {
       color: $colHover; 
       background-color: $bgHighlight;
+    }
+    > a {
+      color: $colDefault;
     }
   }
 
@@ -134,11 +137,19 @@ $colFormText: #003300;
 @import 'bootstrap';
 
 .spacer {
-  padding-top: 60px;
+  padding-top: 50px;
 }
 
 body{
   padding-top: 20px;
+}
+
+h1, h2, h3 {
+  color: $colHeadings;
+}
+
+.flash_messages{
+  color: #228B22;
 }
 
 a:link{
@@ -208,7 +219,7 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
 /*Used by jQuery Masonry for "pinterest style" self-adjusting image block layout */
 
 .box{
-  display: block;
+  display: inline-block;
   margin: 5px;
   padding: 5px;
   font-size: 11px;
@@ -224,17 +235,79 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
 }
 
 .box img{
-  display: block;
+  display: inline-block;
   width: 100%;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
+  float: left;
   border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+.box ul, li {
+  display: inline-block;
+  text-decoration: none;
+  list-style-type: none;
 }
 
 .box a{
+  display: inline-block;
   color: #666;
   text-decoration: underline;
   padding-left: 2px;
+  float: left;
+}
+
+.categories_show_block{
+  display: block;
+  margin: 5px;
+  padding: 5px;
+  font-size: 11px;
+  color: #000;
+  line-height: 1.4em;
+  float: left;
+  background-color: grayLight;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px #458B00;
+  width: 100%;
+}
+
+.categories_form_block{
+  display: block;
+  width: 100%
+}
+
+.project_show_block{
+  display: block;
+  margin: 5px;
+  padding: 5px;
+  font-size: 11px;
+  color: #000;
+  line-height: 1.4em;
+  float: left;
+  background-color: grayLight;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px #458B00;
+  width: 60%;
+}
+
+.donation_levels_block{
+  display: block;
+  margin: 5px;
+  padding: 5px;
+  font-size: 11px;
+  color: #000;
+  line-height: 1.4em;
+  float: left;
+  background-color: grayLight;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px #458B00;
+  width: 30%;
 }
 
 .box a:hover{
@@ -255,13 +328,17 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
 .pretty_form {
   padding: 1.05em;
   color: $colFormText;
-  background-color: $colFormBackground;
-}
-
-#new_project {
-  padding: 1.05em;
-  color: $colFormText;
-  background-color: $colFormBackground;
+  display: block;
+  margin: 5px;
+  padding: 5px;
+  font-size: 11px;
+  line-height: 1.4em;
+  background-color: grayLight;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px #458B00;
+  width: 80%;
 }
 
 #footer{

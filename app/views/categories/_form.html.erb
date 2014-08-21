@@ -1,18 +1,15 @@
-<%= bootstrap_form_for @category do |form| %>
-  <%= render "error_messages", target: @category %>
-  <div>
-  <%= form.label :name, "Category" %>
-  </div>
-  <div>
-  <%= form.text_field :name %>
-  </div>
-  <div>
-  <%= form.label :category_type, "Which type of category is this?" %>
-  </div>
-  <div>
-  <%= form.text_field :category_type %>
-  </div>
-  <div class="pull-right">
-  <%= form.submit :submit %>
-  </div>
-<% end %>
+<div class="pretty_form">
+  <%= bootstrap_form_for @category do |form| %>
+    <%= render "error_messages", target: @category %>
+    <div>
+    <%= form.text_field :name, label: "Category" %>
+    </div>
+    <div>
+      <%= form.text_field :category_type, label: "Which type of category is this?",
+        placeholder: "Efficiency, Renewables, or enter a new type name...." %>
+    </div>
+    <div class="pull-right">
+    <%= form.submit :submit %>
+    </div>
+  <% end %>
+</div>
