@@ -1,50 +1,31 @@
 <%= render "error_messages", target: @project %>
-<%= form_for @project do |form| %>
-  <div>
-    <%= form.label :title %>
-  </div>
-
-  <div>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.label :blurb %>
-  </div>
-
-  <div>
-    <%= form.text_field :blurb %>
-  </div>
-
-  <div>
-    <%= form.label :description %>
-  </div>
-
-  <div>
-    <%= form.text_field :description %>
-  </div>
-
-  <div>
-    <%= form.label "Project cost", :cost %>
-  </div>
-
-  <div>
-    <%= form.text_field :cost %>
-  </div>
-
-  <div>
-    <%= form.label "Category" %>
-  </div>
-
-  <div>
-    <%= form.collection_select(
-      :category_id, 
-      @categories, 
-      :id, 
-      :name, 
-      include_blank: "choose..."
-      ) 
-    %>
-  </div>
-  <%= form.submit %>
-<% end %>
+<div class="pretty_form">
+  <h2>Add Your New Project</h2>
+  <%= bootstrap_form_for @project do |form| %>
+    <div>
+      <%= form.text_field :title %>
+    </div>
+    <div>
+      <%= form.text_area :blurb %>
+    </div>
+    <div>
+      <%= form.text_area :description %>
+    </div>
+    <div>
+      <%= form.text_field :cost, prepend: "$" %>
+    </div>
+    <div>
+      <%= form.collection_select(
+        :category_id,
+        @categories,
+        :id,
+        :name,
+        include_blank: "choose..."
+        )
+      %>
+    </div>
+    <div class="pull-right">
+      <%= form.submit %>
+    </div>
+  <% end %>
+</div>

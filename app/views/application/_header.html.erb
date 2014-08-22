@@ -1,6 +1,4 @@
-<%= render "flash_messages" %>
-
-<nav role="navigation" class="navbar navbar-default navbar-fixed-top">
+<nav role="navigation" class="navbar navbar-custom navbar-fixed-top">
   <div class="container-fluid">
 
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -11,7 +9,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="#" class="navbar-brand">Green Planet Heroes</a>
+      <span class="navbar-brand"><%=link_to "Green Planet Heroes", root_path  %></span>
     </div>
 
     <!-- Collection of nav links and other content for toggling -->
@@ -26,10 +24,9 @@
 
       <ul class="nav navbar-nav navbar-right">
         <% if signed_in? %>
-          Signed in as <%= current_user.name %>, not you? 
-          <li><%= button_to "Sign out", :session, method: :delete %></li>
+          <li><%= button_to "Sign out", :session, method: :delete, class: "btn btn-custom btn-primary"  %></li>
         <% else %>
-          <li><%= link_to "Sign in", [:new, :session] %></li>
+          <li><%= link_to "Sign in", [:new, :session], class: "btn btn-custom btn-primary" %></li>
         <% end %>
       </ul>
     </div>

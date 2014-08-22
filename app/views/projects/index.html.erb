@@ -1,6 +1,10 @@
-<h2>Projects</h2>
-<% @projects.each do |project| %>
-  <ul>
-    <li><%= link_to project.title, project %></li>
-  </ul>
-<% end %>
+<div class="project_show_block">
+  <h2>Projects</h2>
+  <% @projects.each do |project| %>
+    <ul>
+      <li><h3><%= link_to project.title, project %></h3>
+        </br><%= project.blurb %>
+      </li>
+    </ul>
+  <% end %>
+</div>
