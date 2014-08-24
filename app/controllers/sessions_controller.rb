@@ -10,10 +10,13 @@ class SessionsController < ApplicationController
 
   def create_session_modal
     user = authenticate_session(session_params)
-    if sign_in(user)
-      redirect_to nothing: true, status: 200
-    else
-      render :new
+
+    if request.xhr?
+      if sign_in(user)
+        redirect_to nothing: true, status: 200
+      else
+        render :new
+      end
     end
   end
 
