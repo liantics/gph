@@ -31,9 +31,18 @@
       <div>
         <%= number_to_currency level.amount %>
       </div>
-      <%= bootstrap_form_for [level, @donation] do |form| %>
-        <%= form.submit "Donate", method: :create %>
-      <% end %>
+        <% if signed_in? %>
+          <%= bootstrap_form_for [level, @donation] do |form| %>
+            <span id="submit_level_<%= level.id %>">
+              <%= form.submit "Donate", method: :create, class: "btn btn-primary donate" %>
+            </span>
+          <% end %>
+        <% else %>
+          <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" data-level="<%= level.id %>">Sign in to Donate</button>
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <%= render "modal_button.html" %>
+          </div>
+        <% end %>
     <% end %>
   </div>
 </div>

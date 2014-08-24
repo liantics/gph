@@ -1,10 +1,12 @@
 class DonationsController < ApplicationController
+  before_action :require_login, only: [:create]
+
   def create
     @donation = Donation.new(donation_params)
 
     if @donation.save
       flash[:notice] = "Your donation for $#{@donation.amount} is being
-       processed. Thank you #{current_user.name}!"
+      processed. Thank you #{current_user.name}!"
       redirect_to receiving_project
     else
       redirect_to root_path

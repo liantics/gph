@@ -1,0 +1,13 @@
+<div class="pretty_form">
+  <%= bootstrap_form_for :session, remote: true, html: {"data-type" => :json}, url: create_session_modal_path do |form| %>
+    <div>
+      <%= form.email_field :email %>
+    </div>
+    <div>
+      <%= form.password_field :password %>
+    </div>
+    <div class="pull-right" id="modal_form">
+      <%= form.submit "Sign in" %>
+    </div>
+  <% end %>
+</div>

@@ -5,6 +5,18 @@ class SessionsController < ApplicationController
   def new
   end
 
+  def new_session_modal
+  end
+
+  def create_session_modal
+    user = authenticate_session(session_params)
+    if sign_in(user)
+      redirect_to nothing: true, status: 200
+    else
+      render :new
+    end
+  end
+
   def create
     user = authenticate_session(session_params)
     if sign_in(user)
@@ -22,7 +34,9 @@ class SessionsController < ApplicationController
   private
 
   def session_params
-    params.require(:session).permit(:email, :password)
+    params.require(:session).permit(
+      :email,
+      :password)
   end
 
   def require_enabled_account
