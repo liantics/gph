@@ -1,13 +1,5 @@
-<div class="pretty_form">
-  <%= bootstrap_form_for :session, url: session_path do |form| %>
-    <div>
-      <%= form.email_field :email %>
-    </div>
-    <div>
-      <%= form.password_field :password %>
-    </div>
-    <div class="pull-right">
-      <%= form.submit "Sign in" %>
-    </div>
-  <% end %>
-</div>
+<h3>Not a Site Member, Yet?</h3>
+<%= link_to "Sign Up", new_user_path, class: "btn btn-primary" %>
+
+<h3>Sign In</h3>
+<%= render "form" %>
