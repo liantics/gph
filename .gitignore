@@ -16,4 +16,5 @@
 /tmp
 
 #Ignore environment variables file
+/public/uploads
 .env

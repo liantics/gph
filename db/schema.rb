@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140821030807) do
+ActiveRecord::Schema.define(version: 20140825153741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,16 @@ ActiveRecord::Schema.define(version: 20140821030807) do
 
   add_index "donations", ["level_id"], name: "index_donations_on_level_id", using: :btree
   add_index "donations", ["user_id"], name: "index_donations_on_user_id", using: :btree
+
+  create_table "images", force: true do |t|
+    t.string   "image",          null: false
+    t.string   "imageable_type", null: false
+    t.integer  "imageable_id",   null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "images", ["imageable_id"], name: "index_images_on_imageable_id", using: :btree
 
   create_table "levels", force: true do |t|
     t.string   "title",       null: false
