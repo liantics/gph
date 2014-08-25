@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class ImagesUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
@@ -19,7 +17,9 @@ class ImagesUploader < CarrierWave::Uploader::Base
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
   #   # For Rails 3.1+ asset pipeline compatibility:
-  #   # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
+  #   # ActionController::Base.helpers
+  #        .asset_path("fallback/" + 
+  #        [version_name, "default.png"].compact.join('_'))
   #
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
@@ -29,19 +29,19 @@ class ImagesUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :standard_size do
-    process :resize_to_limit => [800, 800]
+    process resize_to_limit: [800, 800]
   end
 
-  version :avatar do
-    process :resize_to_fill => [150, 150]
+  version :avatar do, from_version: :standard_size do
+    process resize_to_fill: [150, 150]
   end
 
-  version :thumb, :from_version => :avatar do
-    process :resize_to_fill => [50, 50]
+  version :thumb, from_version: :avatar do
+    process resize_to_fill: [50, 50]
   end
 
   version :featured_slider do
-    process :resize_to_limit => [1200, 480]
+    process resize_to_limit: [1200, 480]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
@@ -51,9 +51,9 @@ class ImagesUploader < CarrierWave::Uploader::Base
   end
 
   # Override the filename of the uploaded files:
-  # Avoid using model.id or version_name here, see uploader/store.rb for details.
+  # Avoid using model.id or version_name here, 
+  # see uploader/store.rb for details.
   # def filename
   #   "something.jpg" if original_filename
   # end
-
 end
