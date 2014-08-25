@@ -32,7 +32,7 @@ class ImagesUploader < CarrierWave::Uploader::Base
     process resize_to_limit: [800, 800]
   end
 
-  version :avatar do, from_version: :standard_size do
+  version :avatar, from_version: :standard_size do
     process resize_to_fill: [150, 150]
   end
 
