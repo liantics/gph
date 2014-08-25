@@ -11,5 +11,5 @@ class Project < ActiveRecord::Base
   belongs_to :category
 
   has_many :levels, dependent: :destroy
-  has_many :pictures, as: :imageable, dependent: :destroy
+  has_many :images, as: :imageable, dependent: :destroy
 end
