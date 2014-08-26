@@ -21,7 +21,7 @@ class Project < ActiveRecord::Base
   private
 
   def calculate_donations
-    donations = Donation.where(project_id: self.id)
-    donations.map {|donation| donation["amount"]}.reduce(0, :+)
+    donations = Donation.where(project_id: id)
+    donations.map { |donation| donation["amount"] }.reduce(0, :+)
   end
 end
