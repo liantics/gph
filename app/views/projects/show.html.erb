@@ -1,13 +1,13 @@
 <div class="project_show_block">
   <h2><%= @project.title %></h2>
-  <div>
+  <div class="display_newlines">
     <%= @project.blurb %>
   </div>
-  <div>
+  <div class="display_newlines">
     <%= @project.description %>
   </div>
   <div>
-    Total $<%= @project.cost %>
+    Total: <%= number_to_currency @project.cost %>
   </div>
 </div>
 

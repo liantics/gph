@@ -1,12 +1,9 @@
 <ul>
   <li>
     <h2>You've Funded</h2>
-    <%= if @projects_you_funded.any? %>
-      <% @projects_you_funded.each do |project| %>
-        <h3><%= project.title %></h3>
-      <% end %>
-    <% else %>
-        You haven't donated to any projects.
+    <% @projects_you_funded.each do |project|  %>
+      <h4><%= link_to project.title, project %></h4>
+      Raised so far: <%= number_to_currency project.received_donations%>
     <% end %>
   </li>
 </ul>

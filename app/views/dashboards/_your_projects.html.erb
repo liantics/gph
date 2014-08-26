@@ -3,7 +3,7 @@
     <h2>Your Projects</h2>
     <% if @your_projects.any? %> 
       <% @your_projects.each do |project| %>
-        <h3><%= project.title %></h3>
+        <h4><%= link_to project.title, project %></h4>
         Needed: <%= number_to_currency project.cost %>, Raised: <%= number_to_currency project.received_donations %>
       <% end %>
     <% else %>
