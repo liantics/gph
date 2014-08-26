@@ -14,7 +14,8 @@ class DashboardsController < ApplicationController
 
   def user_donated_list
     if current_user
-      Project.joins(:donations).where(donations: [user_id: current_user.id])
+      Project.joins(:donations).where("donations.user_id = ?", current_user.id).uniq
     end
   end
+
 end

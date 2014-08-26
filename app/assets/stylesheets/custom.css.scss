@@ -277,9 +277,12 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
   width: 100%;
 }
 
+.display_newlines{
+  white-space: pre-wrap;
+}
+
 .dashboard_show_your_projects_block{
   display: inline-block;
-  white-space: pre-wrap;
   float: none;
   margin: 5px;
   padding: 5px -20px 5px 20px;
@@ -296,10 +299,9 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
 
 .dashboard_show_you_funded_block{
   display: inline-block;
-  white-space: pre-wrap;
   float: none;
   margin: 5px;
-  padding: 5px -20px 5px 20px;
+  padding: 5px -40px 5px 20px;
   font-size: 11px;
   color: #000;
   line-height: 1.4em;
