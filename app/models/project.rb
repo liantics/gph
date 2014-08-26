@@ -11,5 +11,17 @@ class Project < ActiveRecord::Base
   belongs_to :category
 
   has_many :levels, dependent: :destroy
+  has_many :donations, dependent: :destroy
   has_many :images, as: :imageable, dependent: :destroy
+
+  def received_donations
+    calculate_donations
+  end
+
+  private
+
+  def calculate_donations
+    donations = Donation.where(project_id: id)
+    donations.map { |donation| donation["amount"] }.reduce(0, :+)
+  end
 end

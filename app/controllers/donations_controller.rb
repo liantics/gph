@@ -22,7 +22,11 @@ class DonationsController < ApplicationController
   def donation_params
     params.permit(
       :level_id,
-    ).merge(user_id: current_user.id, amount: level.amount)
+    ).merge(
+      user_id: current_user.id,
+      amount: level.amount,
+      project_id: level.project_id
+    )
   end
 
   def receiving_project

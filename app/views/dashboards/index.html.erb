@@ -2,16 +2,16 @@
   <div class="jumbotron masthead">
     <h1>Welcome, Hero!</h1>
   </div>
-  <ul>
-    <li>
-      <div class="col-centered dashboard_show_your_projects_block">
+  <div class="container-fluid">
+    <div class="row">
+      <span class="col-md-6 col-lg-7 col-lg-offset-1 dashboard_show_your_projects_block">
         <%= render "your_projects" %>
-      </div>
-      <div class="col-centered dashboard_show_you_funded_block">
+      </span>
+      <span class="col-md-4 col-lg-4 col-lg-offest-1 dashboard_show_you_funded_block">
         <%= render "projects_you_funded" %>
-      </div>
-    </li>
-  </ul>
+      </span>
+    </div>
+  </div>
 <%else%>
   <div class="jumbotron masthead">
     <%= render "you_can_be_a_hero" %>
