@@ -1,19 +1,13 @@
 <ul>
-  <li class ="col-centered inline">
+  <li>
     <h2>Your Projects</h2>
-    <a href="#">
-      Your Project 1<br>
-      &nbsp;<br>
-      &nbsp;
-      <img data-src="holder.js/300x200" alt="">
-    </a>
-    <p><b>Title</b></p>
-    <a href="#" class="thumbnail">
-    Your Project 2<br>
-    &nbsp;<br>
-    &nbsp;
-    <img data-src="holder.js/300x200" alt="">
-    </a>
-    <p><b>Title</b></p>
+    <% if @your_projects.any? %> 
+      <% @your_projects.each do |project| %>
+        <h3><%= project.title %></h3>
+        Needed: <%= number_to_currency project.cost %>, Raised: <%= number_to_currency project.received_donations %>
+      <% end %>
+    <% else %>
+        You haven't created any projects.
+    <% end %>
   </li>
 </ul>

@@ -194,7 +194,7 @@ a:hover{
   box-shadow: 1px 1px 5px gray;
   margin-bottom: 40px;
   margin-top: 40px;
-  padding: 20px 20px 20px;
+  padding: 10px 20px 10px;
 }
 
 /* ************************************
@@ -262,6 +262,7 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
 
 .categories_show_block{
   display: block;
+  white-space: pre-wrap;
   margin: 5px;
   padding: 5px;
   font-size: 11px;
@@ -277,10 +278,12 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
 }
 
 .dashboard_show_your_projects_block{
-  display: block;
+  display: inline-block;
+  white-space: pre-wrap;
+  float: none;
   margin: 5px;
-  padding: 5px;
-  font-size: 11px;
+  padding: 5px -20px 5px 20px;
+  font-size: 1.2em;
   color: #000;
   line-height: 1.4em;
   float: left;
@@ -292,9 +295,11 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
 }
 
 .dashboard_show_you_funded_block{
-  display: block;
+  display: inline-block;
+  white-space: pre-wrap;
+  float: none;
   margin: 5px;
-  padding: 5px;
+  padding: 5px -20px 5px 20px;
   font-size: 11px;
   color: #000;
   line-height: 1.4em;
