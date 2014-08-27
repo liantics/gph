@@ -45,7 +45,7 @@ class SessionsController < ApplicationController
   def require_enabled_account
     user = User.find_by(email: session_params[:email])
     if user
-      if ! user.account_enabled
+      if !user.account_enabled
         flash[:notice] = "User #{user.name} has been disabled"
         redirect_to root_path
       end

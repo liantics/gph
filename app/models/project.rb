@@ -30,7 +30,7 @@ class Project < ActiveRecord::Base
     end
   end
 
-  def is_successful?
+  def successful?
     calculate_success
   end
 

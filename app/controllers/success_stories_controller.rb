@@ -9,8 +9,8 @@ class SuccessStoriesController < ApplicationController
   def generate_success_list(projects)
     success_list = []
     projects.each do |project|
-      if project.is_successful?
-        success_list<<project
+      if project.successful?
+        success_list << project
       end
     end
     success_list
