@@ -36,8 +36,8 @@ class Project < ActiveRecord::Base
   end
 
   def calculate_received_donations
-    calculate_project_donations.map { 
-      |donation| donation["amount"] 
+    calculate_project_donations.map {
+      |donation| donation["amount"]
     }.reduce(0, :+)
   end
 
