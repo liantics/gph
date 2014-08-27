@@ -24,5 +24,4 @@ gem 'carrierwave'
 gem 'fog'
 gem 'mini_magick'
 gem 'rails_12factor', group: :production
-gem 'sprockets_better_errors'
 ruby "2.1.2"
