@@ -2,66 +2,15 @@
   <h1>Success Stories</h1>
 </div>
 <div class="container">
-  <p>Cool page of Completed projects. </p>
-  <ul class="thumbnails">
-    <li class="span3">
-    <a href="#" class="thumbnail">
-      image 1
-      <img data-src="holder.js/300x200" alt="">
-    </a>
-    Super Successful Project Text 1
-    </li>
-    <li class="span3">
-    <a href="#" class="thumbnail">
-      image 2
-      <img data-src="holder.js/300x200" alt="">
-    </a>
-    Super Successful Project Text 2
-    </li>
-    <li class="span3">
-    <a href="#" class="thumbnail">
-      image 3
-      <img data-src="holder.js/300x200" alt="">
-    </a>
-    Super Successful Project Text 3
-    </li>
-    <li class="span3">
-    <a href="#" class="thumbnail">
-      image 4
-      <img data-src="holder.js/300x200" alt="">
-    </a>
-    Super Successful Project Text 4
-    </li>
-  </ul>
-
-  <ul class="thumbnails">
-    <li class="span3">
-    <a href="#" class="thumbnail">
-      image 5
-      <img data-src="holder.js/300x200" alt="">
-    </a>
-    Super Successful Project Text 5
-    </li>
-    <li class="span3">
-    <a href="#" class="thumbnail">
-      image 6
-      <img data-src="holder.js/300x200" alt="">
-    </a>
-    Super Successful Project Text 6
-    </li>
-    <li class="span3">
-    <a href="#" class="thumbnail">
-      image 7
-      <img data-src="holder.js/300x200" alt="">
-    </a>
-    Super Successful Project Text 7
-    </li>
-    <li class="span3">
-    <a href="#" class="thumbnail">
-      image 8
-      <img data-src="holder.js/300x200" alt="">
-    </a>
-    Super Successful Project Text 8
-    </li>
-  </ul>
+  <div class="row">
+    <% @success_stories.each do |story| %>
+      <div class="box">
+        <h4><%= link_to story.title, story %></h4>
+        <p><%= story.blurb %></p>
+        <p>Needed: <%= number_to_currency story.cost %>, 
+        Receved: <%= number_to_currency story.received_donations %>, for 
+        <%= story.percentage_of_goal %>% of the goal!
+      </div>
+    <% end %>
+  </div>
 </div>

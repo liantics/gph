@@ -29,6 +29,11 @@ class Project < ActiveRecord::Base
       "#{percentage_of_goal} Percent of the Way"
     end
   end
+
+  def successful?
+    calculate_success
+  end
+
   private
 
   def calculate_project_donations
@@ -43,5 +48,9 @@ class Project < ActiveRecord::Base
 
   def calculate_percentage_of_goal
     ((calculate_received_donations.to_f / cost.to_f) * 100).floor
+  end
+
+  def calculate_success
+    calculate_percentage_of_goal >= 100
   end
 end
