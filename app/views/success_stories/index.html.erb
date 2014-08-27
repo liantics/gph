@@ -1,0 +1,16 @@
+<div class="hero-unit">
+  <h1>Success Stories</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <% @success_stories.each do |story| %>
+      <div class="box">
+        <h4><%= link_to story.title, story %></h4>
+        <p><%= story.blurb %></p>
+        <p>Needed: <%= number_to_currency story.cost %>, 
+        Receved: <%= number_to_currency story.received_donations %>, for 
+        <%= story.percentage_of_goal %>% of the goal!
+      </div>
+    <% end %>
+  </div>
+</div>
