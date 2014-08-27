@@ -23,3 +23,4 @@ gem 'bootstrap_form'
 gem 'carrierwave'
 gem 'fog'
 gem 'mini_magick'
+gem 'rails_12factor', group: :production
