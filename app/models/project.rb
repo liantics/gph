@@ -36,10 +36,12 @@ class Project < ActiveRecord::Base
   end
 
   def calculate_received_donations
-    calculate_project_donations.map { |donation| donation["amount"] }.reduce(0, :+)
+    calculate_project_donations.map { 
+      |donation| donation["amount"] 
+    }.reduce(0, :+)
   end
 
   def calculate_percentage_of_goal
-    ((calculate_received_donations.to_f/cost.to_f)*100).floor
+    ((calculate_received_donations.to_f / cost.to_f) * 100).floor
   end
 end
