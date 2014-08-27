@@ -2,14 +2,19 @@
   <div class="jumbotron masthead">
     <h1>Welcome, Hero!</h1>
   </div>
-  <div class="container-fluid">
-    <div class="row">
-      <span class="col-md-6 col-lg-7 col-lg-offset-1 dashboard_show_your_projects_block">
-        <%= render "your_projects" %>
-      </span>
-      <span class="col-md-4 col-lg-4 col-lg-offest-1 dashboard_show_you_funded_block">
-        <%= render "projects_you_funded" %>
-      </span>
+  <div class="hero-unit">
+    <div class="container">
+      <div class="row clearfix">
+        <div class="col_centered">
+          <div class="col-md-7 dashboard_show_your_projects_block">
+            <%= render "your_projects" %>
+          </div>
+          <div class="col-md-4 col-md-offset-1 dashboard_show_you_funded_block">
+            <%= render "projects_you_funded" %>
+          </div>
+        </div>
+      </div>
+      </div>
     </div>
   </div>
 <%else%>

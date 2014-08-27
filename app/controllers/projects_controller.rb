@@ -22,6 +22,8 @@ class ProjectsController < ApplicationController
     @new_level = Level.new
     @levels = sorted_donation_levels
     @donation = Donation.new
+    @percentage = @project.percentage_of_goal
+    @percent_header_text = @project.percent_header_text
   end
 
   def index

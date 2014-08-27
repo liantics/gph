@@ -155,10 +155,11 @@ h1, h2, h3 {
   color: #228B22;
 }
 
-a:link{
-  color: lightgreen;
+a{
+  color: green;
   text-decoration: none;
 }
+
 a:hover{
   color: lightgreen;
   text-decoration:underline;
@@ -221,6 +222,10 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
 
 /*Used by jQuery Masonry for "pinterest style" self-adjusting image block layout */
 
+.display_newlines{
+  white-space: pre-wrap;
+}
+
 .box{
   display: inline-block;
   margin: 5px;
@@ -262,7 +267,6 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
 
 .categories_show_block{
   display: block;
-  white-space: pre-wrap;
   margin: 5px;
   padding: 5px;
   font-size: 11px;
@@ -277,15 +281,10 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
   width: 100%;
 }
 
-.display_newlines{
-  white-space: pre-wrap;
-}
-
 .dashboard_show_your_projects_block{
-  display: inline-block;
   float: none;
   margin: 5px;
-  padding: 5px -20px 5px 20px;
+  padding: 5px -50px 5px 20px;
   font-size: 1.2em;
   color: #000;
   line-height: 1.4em;
@@ -298,10 +297,9 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
 }
 
 .dashboard_show_you_funded_block{
-  display: inline-block;
   float: none;
   margin: 5px;
-  padding: 5px -40px 5px 20px;
+  padding: 5px -50px 5px 20px;
   font-size: 11px;
   color: #000;
   line-height: 1.4em;
@@ -311,15 +309,6 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
   -moz-border-radius: 5px;
   border-radius: 5px;
   box-shadow: 1px 1px 10px #458B00;
-}
-
-.col-centered {
-    display:inline-block;
-    float:none;
-    /* reset the text-align */
-    text-align:left;
-    /* inline-block space fix */
-    margin-right:-4px;
 }
 
 .categories_form_block{
@@ -327,36 +316,37 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
   width: 100%
 }
 
+.progress{
+  background-color: #458B00;
+  bacgkround-image: none;
+}
+
 .project_show_block{
-  display: block;
+  display: inline-block;
   margin: 5px;
   padding: 5px;
   font-size: 11px;
   color: #000;
-  line-height: 1.4em;
   float: left;
   background-color: grayLight;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   box-shadow: 1px 1px 10px #458B00;
-  width: 60%;
 }
 
 .donation_levels_block{
-  display: block;
+  display: inline-block;
   margin: 5px;
   padding: 5px;
   font-size: 11px;
   color: #000;
-  line-height: 1.4em;
   float: left;
   background-color: grayLight;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   box-shadow: 1px 1px 10px #458B00;
-  width: 30%;
 }
 
 .element_to_pop_up {
@@ -380,6 +370,11 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
   margin-right: auto;
   margin-left: auto;
   text-align: center;
+}
+
+.col_centered {
+  margin: 0 auto;
+  text-align: left;
 }
 
 .pretty_form {
