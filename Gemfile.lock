@@ -204,6 +204,8 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
+    sprockets_better_errors (0.0.4)
+      sprockets-rails (>= 1.0.0)
     stripe (1.15.0)
       json (~> 1.8.1)
       mime-types (>= 1.25, < 3.0)
@@ -251,6 +253,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   simple_form
+  sprockets_better_errors
   stripe
   uglifier (>= 1.3.0)
   will_paginate
