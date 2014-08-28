@@ -71,7 +71,7 @@ class Project < ActiveRecord::Base
 
   def success_header
     simple_format(
-      "Success! We're making the world better!\n 
+      "Success! We're making the world better!\n
       #{percentage_of_goal}% funded"
     )
   end
