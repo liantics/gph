@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row">
     <% @success_stories.each do |story| %>
-      <div class="box">
+      <div class="success_stories_show_block col-md-6">
         <h4><%= link_to story.title, story %></h4>
         <p><%= story.blurb %></p>
         <p>Needed: <%= number_to_currency story.cost %>, 

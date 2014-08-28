@@ -1,3 +1,6 @@
+include ActionView::Helpers::TextHelper
+include ActionView::Helpers::TagHelper
+
 class Project < ActiveRecord::Base
   validates :title, presence: true
   validates :blurb, presence: true
@@ -23,15 +26,23 @@ class Project < ActiveRecord::Base
   end
 
   def percent_header_text
-    if percentage_of_goal < 5
-      "On the Way"
+    if successful?
+      success_header
     else
-      "#{percentage_of_goal} Percent of the Way"
+      in_progress_header
     end
   end
 
   def successful?
     calculate_success
+  end
+
+  def in_progress?
+    calculate_progress
+  end
+
+  def sorted_donation_levels
+    levels.by_amount
   end
 
   private
@@ -53,4 +64,21 @@ class Project < ActiveRecord::Base
   def calculate_success
     calculate_percentage_of_goal >= 100
   end
+
+  def calculate_progress
+    calculate_percentage_of_goal < 100
+  end
+
+  def success_header
+    simple_format("Success! We're making the world better!\n #{percentage_of_goal}% funded")
+  end
+
+  def in_progress_header
+    if percentage_of_goal < 5
+      "On the Way to a Better Future!"
+    else
+      "Hooray! #{percentage_of_goal}% of the Way to a Better Future!"
+    end
+  end
+
 end
