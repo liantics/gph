@@ -1,8 +1,8 @@
 <div class="row">
   <div class="project_progress_block col-xs-12 col_centered">
-    <h4 class="col_centered"><%= @percent_header_text %> to a Better Future!</h4>
+    <h4 class="col_centered"><%= @percent_header_text %></h4>
     <div class="progress">
-        <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <%= @percentage %>%;">
+        <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="5000" style="width: <%= @percentage %>%;">
           &nbsp;<%= number_to_percentage(@percentage, {precision: 0}) %>
       </div>
     </div>

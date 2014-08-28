@@ -336,6 +336,20 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
   box-shadow: 1px 1px 10px #458B00;
 }
 
+.success_stories_show_block{
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+  font-size: 11px;
+  color: #000;
+  float: left;
+  background-color: grayLight;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px #458B00;
+}
+
 .donation_levels_block{
   display: inline-block;
   margin: 5px;
