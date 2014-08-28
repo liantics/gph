@@ -1,10 +1,12 @@
 <div class="project_show_block">
   <h2>Projects</h2>
   <% @projects.each do |project| %>
-    <ul>
-      <li><h3><%= link_to project.title, project %></h3>
-        </br><%= project.blurb %>
-      </li>
-    </ul>
+    <% if project.in_progress? %>
+      <ul>
+        <li><h4><%= link_to project.title, project %></h4>
+        <span class="display_newlines"><%= project.blurb %></span>
+        </li>
+      </ul>
+    <% end %>
   <% end %>
 </div>
