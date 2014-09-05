@@ -36,8 +36,8 @@ class SessionsController < ApplicationController
         redirect_to root_path
       end
     else
-      flash[:notice] = "There is no account with this email address: 
-        #{session_params[:email]}"
+      flash[:notice] = "There is no account with this email address:
+         #{session_params[:email]}"
       redirect_to new_user_path
     end
   end
