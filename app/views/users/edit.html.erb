@@ -1,7 +1,9 @@
 <h2>Edit <%= @user.name %></h2>
 <div>
+  <h3>Edit Account Information</h3>
   <%= render "user_info_form" %>
 </div>
 <div>
-  <%= button_to "Disable My Account", @user, data: { confirm: "Are you sure? This CAN'T be undone." }, method: :delete %>
+  <h3>Disable Account</h3>
+  <%= button_to "Disable My Account", @user, data: { confirm: "Are you sure? This CAN'T be undone." }, method: :delete, class: "btn btn-primary" %>
 </div>
