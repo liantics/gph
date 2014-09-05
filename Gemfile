@@ -24,4 +24,5 @@ gem 'carrierwave'
 gem 'fog'
 gem 'mini_magick'
 gem 'rails_12factor', group: :production
+gem 'pry'
 ruby "2.1.2"
