@@ -20,8 +20,8 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @new_level = Level.new
-    @levels = sorted_donation_levels
     @donation = Donation.new
+    @levels = @project.sorted_donation_levels
     @percentage = @project.percentage_of_goal
     @percent_header_text = @project.percent_header_text
   end
@@ -40,9 +40,5 @@ class ProjectsController < ApplicationController
       :category_id,
       :cost,
     )
-  end
-
-  def sorted_donation_levels
-    @project.levels.by_amount
   end
 end
