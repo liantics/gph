@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140826132850) do
+ActiveRecord::Schema.define(version: 20140909012503) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,16 +41,6 @@ ActiveRecord::Schema.define(version: 20140826132850) do
   add_index "donations", ["project_id"], name: "index_donations_on_project_id", using: :btree
   add_index "donations", ["user_id"], name: "index_donations_on_user_id", using: :btree
 
-  create_table "images", force: true do |t|
-    t.string   "image",          null: false
-    t.string   "imageable_type", null: false
-    t.integer  "imageable_id",   null: false
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
-
-  add_index "images", ["imageable_id"], name: "index_images_on_imageable_id", using: :btree
-
   create_table "levels", force: true do |t|
     t.string   "title",       null: false
     t.text     "description", null: false
@@ -66,27 +56,29 @@ ActiveRecord::Schema.define(version: 20140826132850) do
   add_index "levels", ["user_id"], name: "index_levels_on_user_id", using: :btree
 
   create_table "projects", force: true do |t|
-    t.string   "title",                   null: false
-    t.text     "blurb",                   null: false
-    t.text     "description",             null: false
-    t.integer  "user_id",                 null: false
-    t.integer  "category_id",             null: false
-    t.integer  "cost",        default: 0, null: false
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.string   "title",                                   null: false
+    t.text     "blurb",                                   null: false
+    t.text     "description",                             null: false
+    t.integer  "user_id",                                 null: false
+    t.integer  "category_id",                             null: false
+    t.integer  "cost",        default: 0,                 null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+    t.string   "image",       default: "project/image/1", null: false
   end
 
   add_index "projects", ["category_id"], name: "index_projects_on_category_id", using: :btree
   add_index "projects", ["title", "user_id"], name: "index_projects_on_title_and_user_id", unique: true, using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "email",                           null: false
-    t.string   "name",                            null: false
-    t.string   "password_digest",                 null: false
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.boolean  "account_enabled", default: true,  null: false
-    t.boolean  "site_admin",      default: false, null: false
+    t.string   "email",                                            null: false
+    t.string   "name",                                             null: false
+    t.string   "password_digest",                                  null: false
+    t.datetime "created_at",                                       null: false
+    t.datetime "updated_at",                                       null: false
+    t.boolean  "account_enabled", default: true,                   null: false
+    t.boolean  "site_admin",      default: false,                  null: false
+    t.string   "image",           default: "uploads/User/image/1"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

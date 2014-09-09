@@ -3,7 +3,7 @@
 <% end %>
 
 <div class="pretty_form">
-  <%= bootstrap_form_for @user do |form| %>
+  <%= bootstrap_form_for @user, :html => { multipart: true } do |form| %>
     <div>
       <%= form.email_field :email %>
     </div>
@@ -15,8 +15,12 @@
         <%= form.password_field :password %>
       </div>
     <% end %>
+    <% if signed_in? %>
+      <%= form.file_field :image %>
+    <% end %>
     <div class="pull-right">
       <%= form.submit %>
     </div>
   <% end %>
 </div>
+

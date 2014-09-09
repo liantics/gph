@@ -1,9 +1,13 @@
 <h2>Your Projects</h2>
-<% if @your_projects.any? %> 
-  <% @your_projects.each do |project| %>
+<% if current_user.projects.any? %>
+  <% current_user.projects.each do |project| %>
     <h4><%= link_to project.title, project %></h4>
-    Needed: <%= number_to_currency project.cost %>, Raised: <%= number_to_currency project.received_donations %>
+    <span class="display_newlines"><img src="<%= project.image_url(:thumb) %>"> <%= project.blurb %></span>
+    Needed: <%= number_to_currency project.cost %>,
+     Raised: <%= number_to_currency project.received_donations %>
   <% end %>
 <% else %>
   You haven't created any projects.
+  <%= link_to "Create a project", [:new, :project],
+    class: "btn btn-primary pull-right" %>
 <% end %>

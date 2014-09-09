@@ -1,10 +1,11 @@
 <h2>You've Funded</h2>
-<% if @projects_you_funded.any? %>
-  <% @projects_you_funded.each do |project|  %>
+<% if current_user.donated_to.any? %>
+  <% current_user.donated_to.each do |project|  %>
     <h4><%= link_to project.title, project %></h4>
-    Raised so far: <%= number_to_currency project.received_donations%>
+    <span class="display_newlines"><img src="<%= project.image_url(:thumb) %>"> <%= project.blurb %></span>
+    Raised so far: <%= number_to_currency project.received_donations %>
   <% end %>
 <% else %>
-    There are projects waiting for you, hero!
+    Oh no! You haven't funded any projects yet. Projects await you, hero!
     <%= link_to "Take me to them!", :projects, class: "btn btn-primary pull-right" %>
 <% end %>
