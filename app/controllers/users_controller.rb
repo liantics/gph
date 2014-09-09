@@ -61,6 +61,8 @@ class UsersController < ApplicationController
       permit(
         :email,
         :name,
+        :password,
+        :image,
     )
   end
 

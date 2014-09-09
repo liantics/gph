@@ -1,11 +1,18 @@
 <h2><%= @user.name %>'s Profile </h2>
 <div class="box">
-  <h3>Name:</h3>
-  <%= @user.name %>
-  <h3>Email:</h3>
-  <%= @user.email %>
   <h3>Make Changes</h3>
+  Update your name, email, or avatar/personal photo
   <% if current_user == @user %>
     <%= link_to "Edit my profile", [:edit, :user], class: "btn btn-primary" %>
   <% end %>
 </div>
+<div class="box">
+  <h3>Name:</h3>
+  <%= @user.name %>
+  <h3>Email:</h3>
+  <%= @user.email %>
+  <h3>Photo or Avatar:</h3>
+  <img src="<%= @user.image_url(:thumb) %>">
+  <%= @user.image_identifier %>
+</div>
+

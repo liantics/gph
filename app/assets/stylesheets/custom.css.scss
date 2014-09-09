@@ -139,6 +139,41 @@ $colFormText: #003300;
 */
 @import 'bootstrap';
 
+@mixin box_rounded_no_shadow {
+  background-color: grayLight;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+@mixin box_rounded_shadow {
+  background-color: grayLight;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px #458B00;
+}
+
+@mixin thumbnail_image {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+@mixin avatar_image {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+@mixin standard_image {
+  max-width: 800px;
+  max-height: 800px;
+}
+
+@mixin featured_image {
+  max-width: 1200px;
+  max-height: 480px;
+}
+
 .spacer {
   padding-top: 50px;
 }
@@ -234,11 +269,7 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
   color: #000;
   line-height: 1.4em;
   float: left;
-  background-color: grayLight;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  box-shadow: 1px 1px 10px #458B00;
+  @include box_rounded_shadow;
   width: 214px;
 }
 
@@ -246,9 +277,7 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
   display: inline-block;
   width: 100%;
   float: left;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
+  @include box_rounded_no_shadow;
 }
 
 .box ul, li {
@@ -265,50 +294,74 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
   float: left;
 }
 
-.categories_show_block{
-  display: block;
+.box a:hover{
+  color: #333;
+}
+
+.show_block {
   margin: 5px;
   padding: 5px;
-  font-size: 11px;
-  color: #000;
-  line-height: 1.4em;
-  float: left;
-  background-color: grayLight;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  box-shadow: 1px 1px 10px #458B00;
-  width: 100%;
-}
-
-.dashboard_show_your_projects_block{
-  float: none;
-  margin: 5px;
-  padding: 5px -50px 5px 20px;
   font-size: 1.2em;
-  color: #000;
-  line-height: 1.4em;
-  float: left;
-  background-color: grayLight;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  box-shadow: 1px 1px 10px #458B00;
-}
+  @include box_rounded_shadow;
 
-.dashboard_show_you_funded_block{
-  float: none;
-  margin: 5px;
-  padding: 5px -50px 5px 20px;
-  font-size: 11px;
-  color: #000;
-  line-height: 1.4em;
-  float: left;
-  background-color: grayLight;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  box-shadow: 1px 1px 10px #458B00;
+  .categories_show {
+    display: block;
+    color: #000;
+    line-height: 1.4em;
+    float: left;
+    width: 100%;
+  }
+
+  .dashboard_show_your_projects {
+    float: none;
+    padding: 5px -50px 5px 20px;
+    color: #000;
+    line-height: 1.4em;
+
+    img {
+      display: block;
+      @include thumbnail_image;
+    }
+  }
+
+  .dashboard_show_you_funded {
+    float: left;
+    padding: 5px 20px 5px 20px;
+    color: #000;
+    line-height: 1.4em;
+
+    img {
+      display: block;
+      @include thumbnail_image;
+    }
+  }
+
+  .project_show {
+    display: inline-block;
+    color: #000;
+
+    img {
+      display: block;
+      float: none;
+      @include standard_image;
+    }
+  }
+
+  .success_stories_show {
+    display: inline-block;
+    color: #000;
+
+    img {
+      display: block;
+      @include thumbnail_image;
+    }
+  }
+
+  .donation_levels {
+    display: inline-block;
+    margin: 5px auto;
+    color: #000;
+  }
 }
 
 .categories_form_block{
@@ -322,54 +375,8 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
   padding: 0px 14px 0px 0px;
 }
 
-.project_show_block{
-  display: inline-block;
-  margin: 5px;
-  padding: 5px;
-  font-size: 11px;
-  color: #000;
-  float: left;
-  background-color: grayLight;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  box-shadow: 1px 1px 10px #458B00;
-}
-
-.success_stories_show_block{
-  display: inline-block;
-  margin: 5px;
-  padding: 5px;
-  font-size: 11px;
-  color: #000;
-  float: left;
-  background-color: grayLight;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  box-shadow: 1px 1px 10px #458B00;
-}
-
-.donation_levels_block{
-  display: inline-block;
-  margin: 5px;
-  padding: 5px;
-  font-size: 11px;
-  color: #000;
-  float: left;
-  background-color: grayLight;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  box-shadow: 1px 1px 10px #458B00;
-}
-
 .element_to_pop_up {
   display:none;
-}
-
-.box a:hover{
-  color: #333;
 }
 
 .description{
@@ -382,6 +389,7 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
 }
 
 .center{
+  width: 100%;
   margin-right: auto;
   margin-left: auto;
   text-align: center;
@@ -400,11 +408,7 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
   padding: 5px;
   font-size: 11px;
   line-height: 1.4em;
-  background-color: grayLight;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  box-shadow: 1px 1px 10px #458B00;
+  @include box_rounded_shadow;
   width: 80%;
 }
 
