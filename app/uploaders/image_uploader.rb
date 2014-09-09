@@ -1,5 +1,5 @@
-require 'carrierwave'
-require 'mini_magick'
+require "carrierwave"
+require "mini_magick"
 
 class ImageUploader < CarrierWave::Uploader::Base
 

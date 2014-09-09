@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-
   validates :email, presence: true, uniqueness: true
   validates :password_digest, presence: true
 
@@ -25,7 +24,7 @@ class User < ActiveRecord::Base
 
   def projects_user_donated_to
     Project.joins(:donations).where(
-      "donations.user_id = ?", self.id
+      "donations.user_id = ?", id
     ).uniq
   end
 
