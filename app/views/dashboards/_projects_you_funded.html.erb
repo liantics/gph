@@ -2,7 +2,7 @@
 <% if current_user.donated_to.any? %>
   <% current_user.donated_to.each do |project|  %>
     <h4><%= link_to project.title, project %></h4>
-    <span class="display_newlines"><img src="<%= project.image_url(:thumb) %>"> <%= project.blurb %></span>
+    <span class="display_newlines"><%= image_tag project.image_url(:thumb) %> <%= project.blurb %></span>
     Raised so far: <%= number_to_currency project.received_donations %>
   <% end %>
 <% else %>

@@ -11,7 +11,7 @@
   <div class="show_block project_show col-xs-12 col-sm-7">
     <h2><%= @project.title %></h2>
     <div class="project_show col-xs-12">
-      <img src="<%= @project.image_url(:standard_size) %>">
+      <%= image_tag  @project.image_url(:standard_size) %>
       <p><%= @project.image_identifier %></p>
     </div>
     <div class="display_newlines">
