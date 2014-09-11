@@ -33,6 +33,7 @@
       </div>
     <% end %>
   </div>
+<% else %>
+  <h2>Add Your New Project</h2>
+  You need to <%= link_to "Sign in", [:new, :session] %> or <%= link_to "Sign up", [:new, :user] %> to post a project.
 <% end %>
-<h2>Add Your New Project</h2>
-You need to <%= link_to "Sign in", [:new, :session] %> or <%= link_to "Sign up", [:new, :user] %> to post a project.

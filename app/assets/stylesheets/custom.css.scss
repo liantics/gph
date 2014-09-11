@@ -165,8 +165,8 @@ $colFormText: #003300;
 }
 
 @mixin standard_image {
-  max-width: 800px;
-  max-height: 800px;
+  max-width: 640px;
+  max-height: 360px;
 }
 
 @mixin featured_image {
