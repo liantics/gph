@@ -1,31 +1,39 @@
 <%= render "error_messages", target: @project %>
-<div class="pretty_form">
+<% if signed_in? %>
+  <div class="pretty_form">
+    <h2>Add Your New Project</h2>
+    <%= bootstrap_form_for @project do |form| %>
+      <div>
+        <%= form.text_field :title %>
+      </div>
+      <div>
+        <%= form.text_area :blurb %>
+      </div>
+      <div>
+        <%= form.text_area :description %>
+      </div>
+      <div>
+        <%= form.text_field :cost, prepend: "$" %>
+      </div>
+      <div>
+        <%= form.collection_select(
+          :category_id,
+          @categories,
+          :id,
+          :name,
+          include_blank: "choose..."
+          )
+        %>
+      </div>
+      <div>
+        <%= form.file_field :image %>
+      </div>
+      <div class="pull-right">
+        <%= form.submit %>
+      </div>
+    <% end %>
+  </div>
+<% else %>
   <h2>Add Your New Project</h2>
-  <%= bootstrap_form_for @project do |form| %>
-    <div>
-      <%= form.text_field :title %>
-    </div>
-    <div>
-      <%= form.text_area :blurb %>
-    </div>
-    <div>
-      <%= form.text_area :description %>
-    </div>
-    <div>
-      <%= form.text_field :cost, prepend: "$" %>
-    </div>
-    <div>
-      <%= form.collection_select(
-        :category_id,
-        @categories,
-        :id,
-        :name,
-        include_blank: "choose..."
-        )
-      %>
-    </div>
-    <div class="pull-right">
-      <%= form.submit %>
-    </div>
-  <% end %>
-</div>
+  You need to <%= link_to "Sign in", [:new, :session] %> or <%= link_to "Sign up", [:new, :user] %> to post a project.
+<% end %>

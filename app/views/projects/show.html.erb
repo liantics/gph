@@ -8,8 +8,12 @@
     </div>
   </div>
 
-  <div class="project_show_block col-sm-7">
+  <div class="show_block project_show col-xs-12 col-sm-7">
     <h2><%= @project.title %></h2>
+    <div class="project_show col-xs-12">
+      <%= image_tag  @project.image_url(:standard_size) %>
+      <p><%= @project.image_identifier %></p>
+    </div>
     <div class="display_newlines">
       <%= @project.blurb %>
     </div>
@@ -21,11 +25,11 @@
     </div>
   </div>
 
-  <div class="donation_levels_block col-sm-4">
+  <div class="show_block donation_levels col-xs-12 col-sm-4">
     <h2>Donation Levels</h2>
     <% if signed_in? %>
       <% if current_user.allowed_to_modify?(@project) %>
-        <div class="box">
+        <div class="show_block donation_levels col-xs-12 col-sm-12">
           <h4>Need Donation Levels?</h4>
           <%= link_to "Add a donation level", new_project_level_path(@project), class: "btn btn-primary pull-right" %>
         </div>
@@ -34,7 +38,7 @@
 
     <div>
       <% @levels.each do |level| %>
-        <div class="box">
+        <div class="show_block donation_levels col-xs-12 col-sm-12">
           <div>
             <h4><%= level.title %> - 
             <%= number_to_currency level.amount %></h4>

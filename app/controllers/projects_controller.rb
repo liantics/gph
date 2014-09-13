@@ -39,6 +39,7 @@ class ProjectsController < ApplicationController
       :description,
       :category_id,
       :cost,
+      :image,
     )
   end
 end

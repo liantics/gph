@@ -15,7 +15,8 @@ class Project < ActiveRecord::Base
 
   has_many :levels, dependent: :destroy
   has_many :donations, dependent: :destroy
-  has_many :images, as: :imageable, dependent: :destroy
+
+  mount_uploader :image, ImageUploader
 
   def received_donations
     calculate_received_donations
@@ -52,9 +53,10 @@ class Project < ActiveRecord::Base
   end
 
   def calculate_received_donations
-    calculate_project_donations.map {
-      |donation| donation["amount"]
-    }.reduce(0, :+)
+    received_donations = calculate_project_donations.map do |donation|
+      donation["amount"]
+    end
+    received_donations.reduce(0, :+)
   end
 
   def calculate_percentage_of_goal
