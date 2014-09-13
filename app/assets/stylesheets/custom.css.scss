@@ -155,22 +155,18 @@ $colFormText: #003300;
 }
 
 @mixin thumbnail_image {
-  max-width: 50px;
   max-height: 50px;
 }
 
 @mixin avatar_image {
-  max-width: 100px;
   max-height: 100px;
 }
 
 @mixin standard_image {
-  max-width: 640px;
   max-height: 360px;
 }
 
 @mixin featured_image {
-  max-width: 1200px;
   max-height: 480px;
 }
 
@@ -184,6 +180,11 @@ body{
 
 h1, h2, h3 {
   color: $colHeadings;
+}
+
+
+img, embed, object, video {
+  max-width: 100%;
 }
 
 .flash_messages{
@@ -275,7 +276,6 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
 
 .box img{
   display: inline-block;
-  width: 100%;
   float: left;
   @include box_rounded_no_shadow;
 }
@@ -296,6 +296,23 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
 
 .box a:hover{
   color: #333;
+}
+
+.outer_wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.centering_wrapper {
+  position: relative;
+  float: left;
+  left: 50%;
+}
+
+.center_element {
+  position: relative;
+  float: left;
+  left: -50%;
 }
 
 .show_block {

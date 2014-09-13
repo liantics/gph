@@ -1,0 +1,30 @@
+<%= bootstrap_form_for @project, html: {:multipart => true} do |form| %>
+  <div>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.text_area :blurb %>
+  </div>
+  <div>
+    <%= form.text_area :description %>
+  </div>
+  <div>
+    <%= form.text_field :cost, prepend: "$" %>
+  </div>
+  <div>
+    <%= form.collection_select(
+      :category_id,
+      @categories,
+      :id,
+      :name,
+      include_blank: "choose..."
+      )
+    %>
+  </div>
+  <div>
+    <%= form.file_field :image %>
+  </div>
+  <div class="pull-right">
+    <%= form.submit %>
+  </div>
+<% end %>
