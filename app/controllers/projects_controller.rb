@@ -30,6 +30,20 @@ class ProjectsController < ApplicationController
     @projects = Project.all
   end
 
+  def edit
+    @project = Project.find(params[:id])
+    @categories = Category.all
+  end
+
+  def update
+    project = current_user.projects.find(params[:id])
+    if current_user.allowed_to_modify?(project)
+      update_project(project)
+    else
+      redirect_to projects_path
+    end
+  end
+
   private
 
   def project_params
@@ -41,5 +55,13 @@ class ProjectsController < ApplicationController
       :cost,
       :image,
     )
+  end
+
+  def update_project(project)
+    if project.update(project_params)
+      redirect_to project
+    else
+      render :edit
+    end
   end
 end

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :charges, only: [:new, :create]
   resources :dashboards, only: [:index, :show, :new, :create]
   resources :categories, only: [:new, :create, :show, :edit, :update]
-  resources :projects, only: [:index, :new, :create, :show] do
+  resources :projects, only: [:index, :new, :create, :edit, :update, :show] do
     resources :levels, only: [:new, :create]
   end
   resources :levels, only: [:new, :create] do

@@ -11,8 +11,13 @@
   <div class="show_block project_show col-xs-12 col-sm-7">
     <h2><%= @project.title %></h2>
     <div class="project_show col-xs-12">
-      <%= image_tag  @project.image_url(:standard_size) %>
-      <p><%= @project.image_identifier %></p>
+      <div class="outer_wrapper">
+        <div class="centering_wrapper">
+          <div class="center_element">
+            <%= image_tag  @project.image_url(:standard_size) %>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="display_newlines">
       <%= @project.blurb %>
@@ -26,15 +31,21 @@
   </div>
 
   <div class="show_block donation_levels col-xs-12 col-sm-4">
-    <h2>Donation Levels</h2>
     <% if signed_in? %>
       <% if current_user.allowed_to_modify?(@project) %>
+        <h2>Edit Project</h2>
         <div class="show_block donation_levels col-xs-12 col-sm-12">
-          <h4>Need Donation Levels?</h4>
-          <%= link_to "Add a donation level", new_project_level_path(@project), class: "btn btn-primary pull-right" %>
+          <h4>Need to make a change?</h4>
+          <%= link_to "Edit Project", [:edit, :project], class: "btn btn-primary pull-right" %>
         </div>
-      <% end %>
-    <% end %>
+        <h2>Donation Levels</h2>
+
+            <div class="show_block donation_levels col-xs-12 col-sm-12">
+              <h4>Need Donation Levels?</h4>
+              <%= link_to "Add a donation level", new_project_level_path(@project), class: "btn btn-primary pull-right" %>
+            </div>
+          <% end %>
+        <% end %>
 
     <div>
       <% @levels.each do |level| %>
