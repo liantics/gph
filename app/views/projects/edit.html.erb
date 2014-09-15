@@ -3,6 +3,7 @@
   <div class="pretty_form">
     <h2>Edit Project</h2>
     <%= render "form" %>
+  </div>
 <% else %>
   <h2>Login to edit Project</h2>
   You need to <%= link_to "Sign in", [:new, :session] %> or <%= link_to "Sign up", [:new, :user] %> to edit a project.
