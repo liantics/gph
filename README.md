@@ -30,8 +30,26 @@ Information about Green Planet Heroes, how fundraising works, and why you should
 support projects that save energy and shift energy production toward renewables.
 
 ###Success Stories
-The success stories page lists projects that have been funded successfully.
+The success stories page lists projects that have been funded successfully
+(reached 100% or more).
 
 ###Resources
 Information about different ways to save energy, types of renewables, and
 more.
+
+###Sign in/Sign Up
+Allows users to create an account, and sign in if they've already created an
+account. Users can upload an avatar.
+
+###Gems:
+####Sign Up and Sign In
+Monban
+
+####Image uploading, sizing, and storage
+Carrierwave, fog, aws
+
+####Responsive layout
+Bootstrap 3
+
+###Transaction Processing (planned)
+Balanced Payments
