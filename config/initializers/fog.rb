@@ -7,5 +7,5 @@ CarrierWave.configure do |config|
     path_style: true
   }
 
-  config.fog_directory = "gph.images"
+  config.fog_directory = "gphimages"
 end
