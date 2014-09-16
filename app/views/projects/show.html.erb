@@ -19,9 +19,13 @@
         </div>
       </div>
     </div>
+    <h3>About Me</h3>
+    <%= image_tag @project.user.image_url(:thumb) %> <%= @project.user.name %>
+    <h3>Project Intro</h3>
     <div class="display_newlines">
       <%= @project.blurb %>
     </div>
+    <h3>Project Details</h3>
     <div class="display_newlines">
       <%= @project.description %>
     </div>
