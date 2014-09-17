@@ -3,10 +3,9 @@
   <div class="row">
     <% @success_stories.each do |story| %>
       <div class="success_stories_show_block col-md-6">
-        <h4><%= link_to story.title, story %></h4>
-        <p><%= story.blurb %></p>
+        <h4><%= image_tag story.image_url(:thumb) %> <%= link_to story.title, story %></h4>
         <p>Needed: <%= number_to_currency story.cost %>, 
-        Receved: <%= number_to_currency story.received_donations %>, for 
+        Received: <%= number_to_currency story.received_donations %>, for 
         <%= story.percentage_of_goal %>% of the goal!
       </div>
     <% end %>
