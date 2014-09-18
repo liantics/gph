@@ -22,6 +22,10 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    if current_user != @user
+      redirect_to root_path
+      flash[:notice] = "You are not authorized to access that account"
+    end
   end
 
   def update
