@@ -1,0 +1,6 @@
+<h2>Nearing the Finish Line</h2>
+<% @projects.each do |project| %>
+  <% if project.near_finish_line? %>
+    <%= image_tag project.image_url(:thumb) %> <%= link_to project.title, project %>. Only <%= number_to_percentage(project.finish_line_distance, precision: 0)%> to go!
+  <% end %>
+<% end %>
