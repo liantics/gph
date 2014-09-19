@@ -316,8 +316,8 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
 }
 
 .show_block {
-  margin: 5px;
-  padding: 5px;
+  display: inline-block;
+  padding: 15px 35px;
   font-size: 1.2em;
   @include box_rounded_shadow;
 
@@ -330,8 +330,7 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
   }
 
   .dashboard_show_your_projects {
-    float: none;
-    padding: 5px -50px 5px 20px;
+    position: relative;
     color: #000;
     line-height: 1.4em;
 
@@ -342,8 +341,7 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
   }
 
   .dashboard_show_you_funded {
-    float: left;
-    padding: 5px 20px 5px 20px;
+    position: relative;
     color: #000;
     line-height: 1.4em;
 

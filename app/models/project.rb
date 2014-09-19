@@ -45,6 +45,14 @@ class Project < ActiveRecord::Base
   def sorted_donation_levels
     levels.by_amount
   end
+  
+  def finish_line_distance
+   100 - percentage_of_goal
+  end
+
+  def near_finish_line?
+    in_progress? && finish_line_distance < 10
+  end
 
   private
 
