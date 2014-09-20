@@ -54,6 +54,10 @@ class Project < ActiveRecord::Base
     in_progress? && finish_line_distance < 10
   end
 
+  def type
+    category.category_type
+  end
+
   private
 
   def calculate_project_donations
