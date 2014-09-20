@@ -210,6 +210,19 @@ a:hover{
   text-align: center;
 }
 
+.thumb_list_wrapper{
+  clear: both;
+}
+
+.thumb_left{
+  float: left;
+  margin: .2em .2em;
+}
+.no_image_wrap{
+  overflow: hidden;
+  margin: 1.5em auto;
+}
+
 .jumbotron{
   padding-top:-80px;
   position: relative;

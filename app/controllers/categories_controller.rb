@@ -1,13 +1,13 @@
 class CategoriesController < ApplicationController
   def new
-    @category = Category.new 
+    @category = Category.new
   end
 
   def create
     @category = current_user.categories.new(category_params)
 
     if @category.save
-      redirect_to @category 
+      redirect_to @category
     else
       render :new
     end
@@ -23,14 +23,14 @@ class CategoriesController < ApplicationController
 
   def update
     category = Category.find(params[:id])
-    
+
     if current_user.allowed_to_modify?(category)
       update_category(category)
     else
-      redirect_to root_path 
+      redirect_to root_path
     end
   end
-  
+
   private
 
   def category_params

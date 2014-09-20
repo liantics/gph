@@ -1,18 +1,12 @@
 <div class="row">
-  <div class="col-sm-3 show_block_no_shadow">
-    <%=render "effiency_projects" %>
-  </div>
+  <% @category_types.each do |type| %>
+    <div class="col-sm-<%= @column_width %> show_block_no_shadow">
+      <h2><%= type %></h2>
+      <%= render partial: "category_type", locals: {project: @projects, category_type: type} %>
+    </div>
+  <% end %>
 
-  <div class="col-sm-3 show_block_no_shadow">
-    <%=render "renewables_projects" %>
-  </div>
-
-  <div class="col-sm-3 show_block_no_shadow">
-    <%=render "sustainability_projects" %>
-  </div>
-
-  <div class="col-sm-3 show_block_no_shadow">
-    <%=render "finish_line_projects" %>
+  <div class="col-sm-<%= @column_width %> show_block_no_shadow">
+    <%= render "finish_line_projects" %>
   </div>
 </div>
-
