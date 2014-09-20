@@ -37,7 +37,7 @@ class DashboardsController < ApplicationController
 
   def generate_column_widths
     columns_in_row = number_active_category_types + EXISTING_COLUMNS_IN_ROW
-    width = (TOTAL_COLUMNS_IN_GRID/columns_in_row).floor
+    width = (TOTAL_COLUMNS_IN_GRID / columns_in_row).floor
 
     if width < MIN_COL_WIDTH
       width = MIN_COL_WIDTH

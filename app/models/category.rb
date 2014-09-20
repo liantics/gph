@@ -5,10 +5,4 @@ class Category < ActiveRecord::Base
 
   belongs_to :user
   has_many :projects
-
-  def projects_in_category
-    Project.joins(:category).where(
-      "project.category = ?", id
-    )
-  end
 end
