@@ -24,6 +24,7 @@
 
       <ul class="nav navbar-nav navbar-right">
         <% if signed_in? %>
+          <li><%= link_to "My Page", current_user %>
           <li><%= button_to "Sign out", :session, method: :delete, class: "btn btn-custom btn-primary"  %></li>
         <% else %>
           <li><%= link_to "Sign in", [:new, :session], class: "btn btn-custom btn-primary" %></li>
