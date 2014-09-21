@@ -98,12 +98,26 @@ $colFormText: #003300;
     color: $colDefault;
     &:hover, &:focus {
       color: $colHover;
-      background-color: $bgHighlight; 
+      background-color: $bgHighlight;
     }
   }
   .navbar-right {
     width: 20%;
   }
+}
+
+.nav li{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.navbar-bottom{
+  margin-top: 20em;
+  background: linear-gradient(360deg, rgb(2, 54, 2) 0%, rgb(6, 93, 6) 100%);
+}
+
+.navbar-text{
+  color: $colDefault;
 }
 
 /*Great big button tweaks */
@@ -201,10 +215,6 @@ a:hover{
   text-decoration:underline;
 }
 
-.nav li{
-  padding-left: 0px;
-  padding-right: 0px;
-}
 
 .marketing-byline, h1, h2{
   text-align: center;
@@ -233,7 +243,7 @@ a:hover{
 }
 
 .masthead{
-  padding: 70px 0px 80px;
+  padding: 30px 0px 40px;
   margin-bottom: 0px;
   color: rgb(255, 255, 255);
 }
@@ -242,8 +252,8 @@ a:hover{
   background: dce8dc;
   color: #003800;
   box-shadow: 1px 1px 5px gray;
-  margin-bottom: 40px;
-  margin-top: 40px;
+  margin-bottom: 20px;
+  margin-top: 20px;
   padding: 10px 10px 10px;
 }
 
