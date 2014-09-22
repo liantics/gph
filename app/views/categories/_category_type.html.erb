@@ -1,0 +1,11 @@
+<% @categories.each do |category| %>
+  <% if category.category_type == category_type %>
+    <div class="outer_wrapper">
+      <div class="centering_wrapper">
+        <div class="center_element">
+          <h4><%= link_to category.name, category %></h4>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

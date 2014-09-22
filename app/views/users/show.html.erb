@@ -15,3 +15,9 @@
   <img src="<%= @user.image_url(:thumb) %>">
   <%= @user.image_identifier %>
 </div>
+<% if current_user.site_admin %>
+  <div class="box">
+    <h3>Admin Access</h3>
+    <%= link_to "Manage Categories", :categories %>
+  </div>
+<% end %>

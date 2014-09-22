@@ -1,0 +1,15 @@
+<h2>Current Categories</h2>
+<div class="center">
+  <p><%= link_to "Add a category", [:new, :category], class: "btn btn_custom btn-primary"%></p>
+<p>
+To edit an existing category, choose it's name from one of the lists below.</p>
+</div>
+<div class="row">
+  <% @category_types.each do |type| %>
+    <div class="col-sm-<%= @column_width %> show_block_no_shadow">
+      <h2><%= type %></h2>
+      <%= render partial: "category_type", locals: {category: @categories, category_type: type} %>
+    </div>
+  <% end %>
+</div>
+

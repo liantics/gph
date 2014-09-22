@@ -13,6 +13,16 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def index
+    if current_user.site_admin
+      @categories = Category.all
+      @category_types = Category.new.generate_active_category_types
+      @column_width = Category.new.generate_widths(@category_types.count)
+    else
+      redirect_to root_path
+    end
+  end
+
   def show
     @category = Category.find(params[:id])
   end
@@ -47,4 +57,9 @@ class CategoriesController < ApplicationController
       render :edit
     end
   end
+
+ def generate_active_categories
+  categories = Project.pluck(:category_id).uniq
+  active_categories = Category.where(:id => [categories])
+ end
 end
