@@ -57,9 +57,4 @@ class CategoriesController < ApplicationController
       render :edit
     end
   end
-
- def generate_active_categories
-  categories = Project.pluck(:category_id).uniq
-  active_categories = Category.where(:id => [categories])
- end
 end
