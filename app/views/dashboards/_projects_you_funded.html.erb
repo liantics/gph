@@ -1,8 +1,11 @@
 <h2>You've Funded</h2>
 <% if current_user.donated_to.any? %>
-  <% current_user.donated_to.each do |project|  %>
-    <h4><%= image_tag project.image_url(:thumb) %> <%= link_to project.title, project %></h4>
-    Raised so far: <%= number_to_currency project.received_donations %>
+  <% current_user.donated_to.each do |project| %>
+    <div class="thumb_list_wrapper">
+      <span class="thumb_left"><%= image_tag project.image_url(:thumb) %></span>
+      <span class="no_image_wrap"><%= link_to project.title, project %><br />
+      Raised so far: <%= number_to_currency project.received_donations %></span>
+    </div>
   <% end %>
 <% else %>
     Oh no! You haven't funded any projects yet. Projects await you, hero!

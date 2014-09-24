@@ -340,9 +340,9 @@ USE THIS TO GIVE HERO UNIT AN IMAGE BACKGROUND:
 
 .show_block {
   display: inline-block;
-  padding: 15px 35px;
+  padding: 1em 4em;
   font-size: 1.2em;
-  @include box_rounded_shadow;
+  @include box_rounded_no_shadow;
 
   .categories_show {
     display: block;
