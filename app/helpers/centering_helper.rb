@@ -7,7 +7,7 @@ module CenteringHelper
   end
 
   def end_centering
-    raw( '    </div>
+    raw('    </div>
             </div>
           </div>')
   end
