@@ -1,12 +1,14 @@
-<div class="show_block project_show">
-  <h2>Projects</h2>
-  <% @projects.each do |project| %>
-    <% if project.in_progress? %>
-      <ul>
-        <li><h4><%= link_to project.title, project %></h4>
-        <span class="display_newlines"><img src="<%= project.image_url(:thumb) %>"> <%= project.blurb %></span>
-        </li>
-      </ul>
+<%= start_centering %>
+  <div class="show_block project_show">
+    <h2>Projects</h2>
+    <% @projects.each do |project| %>
+      <% if project.in_progress? %>
+        <ul>
+          <li><h4><%= link_to project.title, project %></h4>
+            <span class="display_newlines"><img src="<%= project.image_url(:thumb) %>"> <%= project.blurb %></span>
+          </li>
+        </ul>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
+<%= end_centering %>
