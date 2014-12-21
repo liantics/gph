@@ -25,4 +25,5 @@ gem 'fog'
 gem 'mini_magick'
 gem 'rails_12factor', group: :production
 gem 'pry'
+gem 'centering_helper', '~> 0.0.2'
 ruby "2.1.2"
