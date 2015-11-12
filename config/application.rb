@@ -15,7 +15,7 @@ Bundler.require(*Rails.groups)
 
 module GreenPlanetHeroes
   class Application < Rails::Application
-    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif, *.scss)
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif, *.scss, *.css)
     config.serve_static_assets = true
     config.assets.precompile << "app/assets/custom.css.scss"
     config.autoload_paths += %W(#{config.root}/lib)

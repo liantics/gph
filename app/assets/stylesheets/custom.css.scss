@@ -22,7 +22,8 @@ $colFormText: #003300;
 /* --- Style --- */
 .navbar-custom {
   background-color: $bgDefault;
-  border-color: $bgHighlight;
+ # border-color: $bgHighlight;
+ border-color: red;
   background: linear-gradient(180deg, rgb(2, 54, 2) 0%, rgb(6, 93, 6) 100%);
 
   .navbar-brand {
@@ -215,7 +216,6 @@ a:hover{
   text-decoration:underline;
 }
 
-
 .marketing-byline, h1, h2{
   text-align: center;
 }
@@ -249,7 +249,7 @@ a:hover{
 }
 
 .hero-unit {
-  background: dce8dc;
+  background: dcc8dc;
   color: #003800;
   box-shadow: 1px 1px 5px gray;
   margin-bottom: 20px;

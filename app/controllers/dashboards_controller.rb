@@ -1,5 +1,4 @@
 class DashboardsController < ApplicationController
-
   def index
     @projects = Project.all
     @category_types = Category.new.generate_active_category_types

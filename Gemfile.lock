@@ -47,6 +47,7 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+    centering_helper (0.0.2)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -242,6 +243,7 @@ DEPENDENCIES
   bootstrap-sass
   bootstrap_form
   carrierwave
+  centering_helper (~> 0.0.2)
   coffee-rails (~> 4.0.0)
   dotenv-rails
   fog

@@ -18,25 +18,25 @@
     </div>
   </div>
 <%else%>
-  <div class="jumbotron masthead">
-    <%= render "you_can_be_a_hero" %>
-  </div>
   <div class="hero-unit">
-    <%= render "how_it_works" %>
+    <div class="jumbotron masthead">
+      <%= render "you_can_be_a_hero" %>
+    </div>
+      <%= start_centering %>
+        <%= render "how_it_works" %>
+      <%= end_centering %>
   </div>
 <%end%>
 
-<div class="container-fluid">
-  <div class="hero-unit">
-    <h1>Featured Projects</h1>
-    <%= render "featured" %>
-  </div>
-  <%= render "layouts/carousel_featured" %>
-  <div class="hero-unit">
-    <h1>More Cool Projects</h1>
-    <%= link_to "See All Projects", 
-    projects_path, class: "btn btn-primary btn-large pull-right" %>
-  </div>
+<div class="hero-unit">
+  <h1>Featured Projects</h1>
+  <%= render "featured" %>
+<%= render "layouts/carousel_featured" %>
+</div>
+
+<div class="hero-unit">
+  <h1>More Cool Projects</h1>
+  <%= render "more_cool_projects" %>
   <div class="container-fluid">
       <%= render "cool_projects" %>
   </div>
